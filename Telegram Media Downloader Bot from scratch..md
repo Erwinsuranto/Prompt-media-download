@@ -5,6 +5,101 @@
 
 
 
+
+
+# Lanjutkan dengan prompt ini
+```
+
+
+The Provider Plugin System is close, but it is still not truly zero-core-edit.
+
+The remaining problem is SupportedPlatform.
+
+Currently adding a new provider still requires editing shared types.
+
+Refactor the architecture so providers become completely self-registering.
+
+Requirements:
+
+1. Remove every compile-time dependency on SupportedPlatform.
+
+2. Providers must register themselves dynamically.
+
+3. New providers must require ONLY:
+
+providers/<provider-name>/
+
+and nothing else.
+
+No edits in
+
+types/
+
+engine/
+
+registry/
+
+download engine/
+
+telegram storage/
+
+bot/
+
+config/
+
+4. Replace compile-time unions with runtime metadata.
+
+5. Build ProviderMetadata interface.
+
+6. Build ProviderManifest.
+
+7. Build automatic provider discovery.
+
+8. Build provider dependency validation.
+
+9. Build provider version compatibility.
+
+10. Support hot-loading future providers.
+
+11. Generate provider list dynamically.
+
+12. Admin API must show every provider automatically.
+
+13. Every provider exposes
+
+id
+
+name
+
+version
+
+author
+
+homepage
+
+priority
+
+supported domains
+
+capabilities
+
+configuration schema
+
+14. If a provider folder is copied into providers/, it should work after restart without touching any other file.
+
+15. Keep backward compatibility.
+
+16. Update documentation.
+
+17. Push every completed change to GitHub.
+
+The architecture target is enterprise plugin architecture similar to VS Code extensions or IntelliJ plugins.
+
+Do not rewrite the existing project.
+Only improve the plugin system until zero-core-edit becomes true.
+
+
+```
 # Prompt 4 (
 ```
 
