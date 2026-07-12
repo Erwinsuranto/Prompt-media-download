@@ -5,7 +5,238 @@
 
 
 
+# Prompt 4 (
+```
 
+
+Continue the existing project.
+
+Do NOT rewrite previous modules.
+
+Keep every existing architecture.
+
+Build the next enterprise module.
+
+==========================================
+
+MODULE
+
+Provider Plugin System
+
+==========================================
+
+The Universal Download Engine is complete.
+
+Now create a real provider plugin architecture.
+
+Providers must become true plugins.
+
+==========================================
+
+Requirements
+
+Adding a new provider must require ONLY creating a new provider folder.
+
+No modification of DownloadEngine.
+
+No modification of TelegramStorage.
+
+No modification of Bot.
+
+No modification of Registry.
+
+==========================================
+
+Every provider must expose
+
+Provider ID
+
+Provider Name
+
+Priority
+
+Supported Domains
+
+URL Matcher
+
+Metadata Resolver
+
+Download Request Builder
+
+Capabilities
+
+==========================================
+
+Create
+
+ProviderRegistry
+
+ProviderLoader
+
+ProviderValidator
+
+ProviderCapabilities
+
+ProviderFactory
+
+ProviderMatcher
+
+==========================================
+
+Providers
+
+YouTube
+
+Facebook
+
+Instagram
+
+TikTok
+
+X
+
+Threads
+
+Pinterest
+
+Reddit
+
+Vimeo
+
+SoundCloud
+
+must all inherit the same BaseProvider.
+
+==========================================
+
+Auto Discovery
+
+When project starts
+
+Automatically discover providers.
+
+Register them.
+
+Validate them.
+
+Reject invalid providers.
+
+==========================================
+
+Provider Capabilities
+
+Supports Video
+
+Supports Audio
+
+Supports Playlist
+
+Supports Shorts
+
+Supports Reels
+
+Supports Stories
+
+Supports Live
+
+Supports Private
+
+Supports Age Restricted
+
+Supports Login
+
+==========================================
+
+Priority
+
+If multiple providers match
+
+Automatically choose the highest priority provider.
+
+==========================================
+
+Validation
+
+Validate
+
+provider id
+
+duplicate ids
+
+duplicate domains
+
+missing metadata
+
+missing handlers
+
+==========================================
+
+Health
+
+Expose
+
+Provider Status
+
+Loaded Providers
+
+Failed Providers
+
+Disabled Providers
+
+==========================================
+
+Configuration
+
+Allow
+
+Enable Provider
+
+Disable Provider
+
+Priority Override
+
+==========================================
+
+README
+
+Rewrite provider documentation.
+
+Explain how to create a new provider in less than five minutes.
+
+==========================================
+
+IMPORTANT
+
+After this module,
+
+adding Facebook,
+
+Instagram,
+
+TikTok,
+
+Threads,
+
+X,
+
+Pinterest,
+
+Reddit,
+
+Vimeo,
+
+SoundCloud,
+
+or any future provider
+
+must never require editing the core engine.
+
+The system must become a real plugin architecture suitable for enterprise software.
+
+Push every completed change to GitHub.
+
+
+```
 # Prompt 3
 ```
 
