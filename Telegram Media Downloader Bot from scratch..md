@@ -5,6 +5,306 @@
 
 
 
+# Prompt 2 — Telegram Storage Engine
+```
+
+
+Continue the existing project.
+
+Do NOT rewrite the architecture.
+
+Build the next production-ready module.
+
+========================================
+
+MODULE
+
+Telegram Storage Engine
+
+========================================
+
+This project will become the media engine of my Telegram Drive ecosystem.
+
+Telegram Channel is the permanent storage backend.
+
+Every downloaded media from every provider must be uploaded into Telegram.
+
+Do NOT permanently store media on VPS.
+
+========================================
+
+WORKFLOW
+
+User sends URL
+
+↓
+
+Provider downloads media
+
+↓
+
+Upload media to Telegram Channel
+
+↓
+
+Save metadata
+
+↓
+
+Delete temporary file
+
+↓
+
+Return file to user
+
+========================================
+
+The Telegram Storage Engine must become a reusable service.
+
+Nothing inside providers should directly call Telegram APIs.
+
+Providers should only return downloaded media.
+
+Storage Engine handles everything related to Telegram.
+
+========================================
+
+Implement
+
+TelegramStorage
+
+UploadManager
+
+MessageManager
+
+FileCache
+
+ThumbnailUploader
+
+MediaSender
+
+========================================
+
+Store
+
+message_id
+
+file_id
+
+chat_id
+
+provider
+
+original_url
+
+title
+
+description
+
+duration
+
+thumbnail
+
+mime_type
+
+quality
+
+resolution
+
+fps
+
+bitrate
+
+codec
+
+size
+
+upload_date
+
+checksum
+
+========================================
+
+CACHE
+
+Before downloading
+
+Search database
+
+Search checksum
+
+Search original URL
+
+Search normalized URL
+
+If file already exists
+
+Never download again.
+
+Reuse Telegram CopyMessage.
+
+========================================
+
+MEDIA TYPES
+
+Handle correctly
+
+Video
+
+Audio
+
+Photo
+
+Animation
+
+Voice
+
+Document
+
+Sticker
+
+Future media types.
+
+========================================
+
+UPLOAD
+
+Automatically choose correct Telegram upload method.
+
+Never upload everything as document.
+
+Use
+
+sendVideo
+
+sendAudio
+
+sendPhoto
+
+sendDocument
+
+etc.
+
+========================================
+
+LARGE FILES
+
+Handle Telegram limits.
+
+Support chunking if needed in future.
+
+Prepare architecture.
+
+========================================
+
+THUMBNAILS
+
+Upload thumbnails.
+
+Reuse thumbnails.
+
+Cache thumbnails.
+
+========================================
+
+DATABASE
+
+Storage layer must be abstract.
+
+No provider should know database implementation.
+
+========================================
+
+ERROR HANDLING
+
+Upload timeout
+
+FloodWait
+
+Retry
+
+Network failure
+
+Expired file
+
+Invalid file_id
+
+========================================
+
+LOGGING
+
+Log every upload.
+
+Log cache hits.
+
+Log failures.
+
+Log retries.
+
+========================================
+
+API
+
+Expose clean methods
+
+upload()
+
+exists()
+
+copy()
+
+get()
+
+deleteTemp()
+
+saveMetadata()
+
+========================================
+
+README
+
+Update architecture documentation.
+
+Document Telegram Storage Engine.
+
+Explain future Telegram Drive integration.
+
+========================================
+
+IMPORTANT
+
+This module must become the heart of Telegram Drive.
+
+Future providers like
+
+YouTube
+
+Facebook
+
+Instagram
+
+TikTok
+
+Threads
+
+Pinterest
+
+Reddit
+
+Vimeo
+
+SoundCloud
+
+must use this Storage Engine without changing its implementation.
+
+Refactor existing code if necessary.
+
+Push every completed change to GitHub.
+
+Do not stop until the Telegram Storage Engine is production-ready.
+
+
+```
 # 
 ```
 
