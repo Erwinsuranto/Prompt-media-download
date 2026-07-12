@@ -1,5 +1,281 @@
 
 # Prompt-media-download
+
+
+
+
+
+# 
+```
+
+
+Do NOT stop at the current foundation.
+
+Continue transforming this repository into a true production-ready Telegram Media Downloader Engine.
+
+IMPORTANT
+
+This project is NOT just a Telegram downloader.
+
+This project will become the Media Download Engine for my future Telegram Drive ecosystem.
+
+Everything you build must be designed for long-term scalability.
+
+====================================
+
+DO NOT
+
+- use demo code
+- use placeholder code
+- leave TODO
+- skip implementation
+- simplify architecture
+- break existing code
+
+Everything must be production-ready.
+
+====================================
+
+HARDEN THE CURRENT PROJECT
+
+Replace every weak implementation with production-grade code.
+
+Implement:
+
+- robust error handling
+- retry mechanism
+- download queue
+- concurrency control
+- graceful shutdown
+- structured logging
+- rate limiting
+- input validation
+- provider timeout
+- upload retry
+- download retry
+
+====================================
+
+PROVIDER SYSTEM
+
+Create a modular provider architecture.
+
+Providers must be completely independent.
+
+Supported providers:
+
+YouTube
+
+Facebook
+
+Instagram
+
+TikTok
+
+X (Twitter)
+
+Threads
+
+Reddit
+
+Pinterest
+
+Vimeo
+
+SoundCloud
+
+Future providers must only require creating a new provider folder.
+
+No existing provider should require modification.
+
+====================================
+
+DOWNLOAD ENGINE
+
+Detect provider automatically.
+
+Fetch metadata.
+
+Show
+
+Title
+
+Thumbnail
+
+Duration
+
+Available qualities
+
+Available audio formats
+
+File size
+
+Uploader
+
+Only show formats that actually exist.
+
+====================================
+
+TELEGRAM STORAGE
+
+Telegram Channel is the permanent storage backend.
+
+Never keep downloaded files permanently on VPS.
+
+Workflow:
+
+Download
+
+↓
+
+Upload to Telegram Channel
+
+↓
+
+Save metadata
+
+↓
+
+Delete temporary file
+
+Store:
+
+message_id
+
+file_id
+
+provider
+
+original_url
+
+title
+
+duration
+
+thumbnail
+
+quality
+
+mime_type
+
+upload_date
+
+checksum
+
+====================================
+
+CACHE
+
+Before downloading
+
+Search cache.
+
+If media already exists
+
+Do NOT download again.
+
+Reuse Telegram message using CopyMessage.
+
+====================================
+
+DATABASE
+
+Do NOT use JSON.
+
+Use a production-ready database.
+
+The storage layer must be abstract so I can switch databases later without changing business logic.
+
+====================================
+
+PROJECT STRUCTURE
+
+Separate:
+
+Bot
+
+Providers
+
+Telegram
+
+Storage
+
+Downloader
+
+Cache
+
+Queue
+
+Config
+
+Core
+
+Utils
+
+Types
+
+Logger
+
+====================================
+
+ADMIN
+
+Implement:
+
+Statistics
+
+Active downloads
+
+Queue status
+
+Provider status
+
+Errors
+
+Logs
+
+====================================
+
+README
+
+Rewrite README completely.
+
+Include:
+
+Ubuntu VPS installation
+
+Node installation
+
+FFmpeg
+
+yt-dlp
+
+Environment variables
+
+Running bot
+
+Project architecture
+
+Folder explanation
+
+Troubleshooting
+
+====================================
+
+VERY IMPORTANT
+
+Every architectural decision must prepare this project for future integration with Telegram Drive.
+
+The downloader must become a reusable module.
+
+In the future Telegram Drive will call this engine instead of implementing download logic itself.
+
+Do not stop until the project is production-ready by enterprise standards.
+
+If you need to refactor the existing code to achieve this, do it.
+
+
+```
 # 
 ```
 
