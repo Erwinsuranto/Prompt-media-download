@@ -6,7 +6,84 @@
 
 
 
+# provider pertama yang benar-benar dipakai.
+```
 
+The plugin architecture is now complete.
+
+Do NOT modify the core architecture anymore unless there is a critical bug.
+
+Now build the first real provider: YouTube.
+
+Requirements:
+
+1. Create providers/youtube/.
+
+2. The provider must detect:
+- youtube.com
+- youtu.be
+- m.youtube.com
+- music.youtube.com
+
+3. Use yt-dlp as the download backend.
+
+4. Detect available formats dynamically.
+
+5. Return:
+- title
+- duration
+- uploader
+- thumbnail
+- filesize (if available)
+- all video resolutions
+- all audio qualities
+
+6. Normalize every format into a common model.
+
+7. Support:
+- Video
+- Audio only
+- Playlist (future-ready)
+- Shorts
+- Live replay
+- Age-restricted detection
+- Private video detection
+
+8. Merge audio/video automatically when required.
+
+9. Generate clean filenames.
+
+10. Add progress callbacks.
+
+11. Retry failed downloads.
+
+12. Verify downloaded file integrity.
+
+13. Return structured errors only.
+
+14. Provider must NEVER communicate with Telegram directly.
+
+It only returns normalized media.
+
+15. Storage Engine uploads to Telegram.
+
+16. Bot only consumes Storage Engine.
+
+17. Keep every responsibility isolated.
+
+18. Add unit tests.
+
+19. Update README.
+
+20. Push all completed work to GitHub.
+
+Do not implement Facebook, Instagram, TikTok or other providers yet.
+
+Perfect YouTube provider first.
+
+
+
+```
 # Lanjutkan dengan prompt ini
 ```
 
