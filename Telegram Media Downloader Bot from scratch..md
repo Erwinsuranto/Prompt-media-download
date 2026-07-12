@@ -5,6 +5,280 @@
 
 
 
+
+# Prompt 3
+```
+
+
+Continue the existing project.
+
+Do NOT rewrite previous modules.
+
+Do NOT break existing architecture.
+
+Build the next production-ready module.
+
+==========================================
+
+MODULE
+
+Universal Download Engine
+
+==========================================
+
+This module must become the core download engine for the whole Telegram Drive ecosystem.
+
+Every provider must use this engine.
+
+Providers must NEVER directly call yt-dlp.
+
+==========================================
+
+Architecture
+
+Create a DownloadEngine service.
+
+Providers only provide:
+
+- URL
+- provider name
+
+Everything else must be handled by DownloadEngine.
+
+==========================================
+
+Responsibilities
+
+URL validation
+
+metadata extraction
+
+available format discovery
+
+quality normalization
+
+download
+
+merge video/audio
+
+ffmpeg processing
+
+thumbnail extraction
+
+progress reporting
+
+temporary file management
+
+checksum generation
+
+==========================================
+
+Support
+
+video
+
+audio
+
+playlist (future ready)
+
+live streams (detect)
+
+short videos
+
+reels
+
+==========================================
+
+Implement
+
+DownloadEngine
+
+MetadataService
+
+FormatResolver
+
+ProgressTracker
+
+TempFileManager
+
+FFmpegService
+
+ChecksumService
+
+ThumbnailExtractor
+
+==========================================
+
+Format discovery
+
+Return standardized format information.
+
+Never expose raw yt-dlp format list to providers.
+
+Normalize
+
+resolution
+
+fps
+
+bitrate
+
+codec
+
+container
+
+extension
+
+==========================================
+
+Quality
+
+Support
+
+144p
+
+240p
+
+360p
+
+480p
+
+720p
+
+1080p
+
+1440p
+
+2160p
+
+Best Available
+
+Audio Only
+
+Only display qualities actually available.
+
+==========================================
+
+Progress
+
+Create reusable progress system.
+
+Stages
+
+Fetching metadata
+
+Resolving formats
+
+Downloading
+
+Merging
+
+Processing
+
+Uploading
+
+Finished
+
+==========================================
+
+Temporary Files
+
+Automatically create workspace.
+
+Automatically clean workspace.
+
+Recover orphan files after crash.
+
+==========================================
+
+Retries
+
+Network retry
+
+Download retry
+
+Merge retry
+
+==========================================
+
+Error Handling
+
+Age restriction
+
+Private media
+
+Unavailable media
+
+Geo restriction
+
+Timeout
+
+Network error
+
+Unsupported format
+
+Merge failure
+
+Disk full
+
+==========================================
+
+Caching
+
+Generate checksum.
+
+Reuse previous downloads.
+
+==========================================
+
+Providers
+
+After this module is complete,
+
+YouTube
+
+Facebook
+
+Instagram
+
+TikTok
+
+Threads
+
+Pinterest
+
+Reddit
+
+Vimeo
+
+SoundCloud
+
+must only call DownloadEngine.
+
+No provider may execute yt-dlp directly.
+
+==========================================
+
+README
+
+Update documentation.
+
+Explain Download Engine architecture.
+
+==========================================
+
+IMPORTANT
+
+This module must become the single download engine for every current and future provider.
+
+Refactor existing code if necessary.
+
+Keep architecture clean.
+
+Push all completed work to GitHub.
+
+
+```
 # Prompt 2 — Telegram Storage Engine
 ```
 
