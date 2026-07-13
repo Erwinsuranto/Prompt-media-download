@@ -6,6 +6,54 @@
 
 
 
+# 
+```
+
+Do not implement any new features.
+
+I want a full audit of the current repository.
+
+Verify that every feature you previously claimed actually exists in the code.
+
+Check and report:
+
+1. Telegram bot can receive a media URL.
+2. Provider auto detection works.
+3. Resolution selection works.
+4. Audio selection works.
+5. yt-dlp is actually executed.
+6. Progress message updates correctly.
+7. Download retry works.
+8. Upload to Telegram storage channel works.
+9. Telegram File ID cache works.
+10. Duplicate media detection works.
+11. Queue system works.
+12. Cancel button works.
+13. FloodWait handling works.
+14. Large file handling works.
+15. Metadata storage works.
+16. README is accurate.
+
+For every item:
+- show the source file(s)
+- explain how it works
+- mention missing parts
+- do not claim anything without code evidence.
+
+If something is incomplete, implement it before continuing.
+
+Finally run:
+- npm install
+- npm test
+- npm run build
+
+Fix every error until all commands succeed.
+
+Do not stop until the repository is production ready.
+
+
+
+```
 
 # 
 ```
