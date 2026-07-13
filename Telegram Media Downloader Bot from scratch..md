@@ -6,6 +6,54 @@
 
 
 
+
+# 
+```
+
+
+
+Read and understand the entire repository before making any changes.
+
+This is a new chat, so do not assume any previous context.
+
+Your first task is ONLY to audit the repository.
+
+Repository audit checklist:
+
+1. Read the complete repository structure.
+2. Read every source folder.
+3. Understand the current architecture.
+4. Identify the application entry points.
+5. Understand the build system.
+6. Read package.json, tsconfig, GitHub workflows, and configuration files.
+7. Identify the current API for configuration, logging, providers, telegram handlers, storage, download pipeline, and media sender.
+8. Compare the current implementation with recent commits if necessary.
+9. Detect renamed, moved, or deleted files.
+10. Build an internal understanding of the project before changing anything.
+
+Do NOT modify any code during this audit.
+
+Do NOT create commits.
+
+Do NOT push anything.
+
+After the audit, provide:
+
+- Repository architecture summary.
+- Important modules and their responsibilities.
+- Current build pipeline.
+- Current testing pipeline.
+- Files that appear recently refactored.
+- Potential causes of the remaining TypeScript build errors.
+- Your repair strategy.
+
+Only after I confirm, start fixing the repository.
+
+Do not guess.
+Read the repository first.
+
+```
+
 # 
 ```
 
