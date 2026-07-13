@@ -4,6 +4,31 @@
 
 
 
+# 
+```
+
+
+We will fix the project incrementally to minimize API usage.
+
+Current task:
+Fix ONLY the TypeScript build errors shown by the latest `npm run build` output.
+
+Rules:
+- Do NOT scan or refactor the entire project.
+- Do NOT change unrelated files.
+- Do NOT rewrite working code.
+- Do NOT add new features.
+- Preserve all existing functionality.
+- Make the smallest possible changes.
+- Fix one error, then continue to the next.
+- After fixing all current errors, run `npm run build` again.
+- Repeat until the build succeeds with zero errors.
+- At the end, provide a short summary listing only the modified files and why they were changed.
+
+Start with the first build error only.
+
+
+```
 
 # 
 ```
