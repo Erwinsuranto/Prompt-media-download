@@ -5,6 +5,36 @@
 
 
 
+# 
+```
+
+
+Repository: telegram-media-downloader
+
+Read the entire "telegram-media-downloader" repository before answering.
+
+Do not make any changes yet.
+
+First, perform a complete repository audit and tell me:
+
+1. Overall project architecture.
+2. Main technologies and frameworks used.
+3. Complete folder structure.
+4. Application entry point(s).
+5. Missing configuration files.
+6. Potential bugs or code smells.
+7. Security issues.
+8. Performance issues.
+9. Unused or dead code/files.
+10. High-priority improvements.
+
+At the end of the audit, list at least 10 files that you actually inspected so I can verify that you successfully analyzed the repository.
+
+Do not guess. If you cannot access the repository, explicitly explain why instead of inventing an answer.
+
+
+```
+
 
 # 
 ```
