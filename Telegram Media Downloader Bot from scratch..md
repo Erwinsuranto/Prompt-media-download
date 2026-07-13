@@ -5,6 +5,65 @@
 
 
 
+# 
+```
+
+You started this refactor and you are now responsible for finishing it.
+
+This repository has already passed all tests:
+
+- npm test → 39/39 PASS
+
+The only remaining problem is:
+
+- npm run build → TypeScript build errors
+
+Your task is to continue your own work until the repository builds successfully.
+
+Requirements:
+
+1. Read the current repository source code (not commit metadata only).
+2. Compare your latest commits with the current main branch.
+3. Identify every incomplete refactor introduced during your previous changes.
+4. Run the build.
+5. Fix the TypeScript errors in small logical batches.
+6. After each successful batch:
+   - run npm run build
+   - run npm test
+   - commit
+   - push to main
+7. Repeat until:
+   - npm run build succeeds with zero TypeScript errors
+   - npm test still passes 100%
+   - GitHub Actions are green
+
+Rules:
+
+- Do NOT rewrite the project.
+- Do NOT revert completed work.
+- Do NOT delete files unless they are confirmed obsolete.
+- Do NOT use any.
+- Do NOT use @ts-ignore.
+- Do NOT disable TypeScript.
+- Preserve all existing behaviour.
+- Fix only the real root causes.
+
+If you have access to the repository contents, continue working autonomously without asking me after every commit.
+
+If you encounter a genuine technical limitation, stop only after providing:
+- the exact limitation,
+- the exact file(s) affected,
+- the exact line(s),
+- the exact evidence,
+- and why that limitation prevents further progress.
+
+Do not stop simply because there are many errors. Continue until the build is green or until you reach a verified technical blocker that cannot be bypassed.
+
+The repository should be left in a production-ready state.
+
+
+
+```
 
 # 
 ```
