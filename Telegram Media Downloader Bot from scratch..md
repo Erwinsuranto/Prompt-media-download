@@ -6,6 +6,69 @@
 
 
 
+
+# 
+```
+
+You have full access to this GitHub repository.
+
+DO NOT guess.
+DO NOT ask me to paste build logs.
+DO NOT ask me to copy file contents.
+
+Your first task is to READ the ACTUAL repository source files, not only commit hashes or metadata.
+
+Repository:
+https://github.com/zenolambetuna/telegram-media-downloader
+
+Requirements:
+
+1. Read the repository source code completely.
+2. Sync with the latest main branch.
+3. Run:
+   git pull origin main
+   npm install
+   npm run build
+   npm test
+4. Reproduce every TypeScript error locally.
+5. Fix the errors in small logical batches.
+6. After each batch:
+   - run npm run build
+   - run npm test
+   - commit
+   - push to main
+7. Repeat until:
+   - npm run build passes with 0 errors
+   - npm test passes 100%
+   - GitHub Actions are green
+
+Rules:
+- Do not delete files unless they are truly unused and verified.
+- Do not modify tests unless absolutely required.
+- Do not use any.
+- Do not use @ts-ignore.
+- Do not disable strict TypeScript.
+- Preserve existing behaviour.
+- Fix root causes only.
+
+Before changing code, verify that you are reading the REAL file contents. If your environment can only read commit hashes, metadata, or SHAs instead of source code, STOP immediately and report that your environment cannot access repository contents. Do not invent fixes.
+
+Expected final result:
+- 0 TypeScript build errors
+- All tests passing
+- GitHub Actions passing
+- Every fix committed and pushed to main
+- Final report listing:
+  • every commit hash
+  • every modified file
+  • root cause of each fix
+  • final build result
+  • final test result
+
+
+
+```
+
 # 
 ```
 
