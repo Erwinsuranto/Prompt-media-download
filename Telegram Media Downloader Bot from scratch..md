@@ -4,6 +4,49 @@
 
 
 
+# melakukan audit penuh
+```
+
+
+You now have the latest repository.
+
+Do not guess.
+
+Your task is:
+
+1. Run the GitHub Actions workflow yourself.
+2. Read the complete workflow logs.
+3. Read the repository source files directly.
+4. Reproduce the failures.
+5. Fix every issue preventing the workflow from passing.
+6. Commit every fix directly to the repository.
+7. Push every commit to main.
+8. Repeat this process until GitHub Actions is green.
+
+Do NOT stop after one fix.
+Do NOT ask me to copy files.
+Do NOT ask me to run commands unless absolutely required.
+
+After every commit:
+- wait for GitHub Actions,
+- read the logs,
+- fix the next error,
+- commit,
+- push again.
+
+Only stop when:
+- npm install succeeds
+- npm run build succeeds
+- npm test succeeds
+- GitHub Actions is completely green.
+
+At the end provide:
+- every commit hash,
+- every file modified,
+- root cause of each fix.
+
+
+```
 
 # 
 ```
