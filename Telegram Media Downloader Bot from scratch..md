@@ -5,7 +5,102 @@
 
 
 
+# lapisan bot Telegram
+```
 
+Excellent.
+
+Do NOT build more providers yet.
+
+The YouTube provider and shared engine are now the reference implementation.
+
+Now build the complete Telegram Bot layer on top of the existing architecture.
+
+Requirements:
+
+1. The bot must use the existing Download Engine.
+
+2. User sends a supported URL.
+
+3. Detect the correct provider automatically.
+
+4. Show media information:
+- title
+- duration
+- thumbnail
+- platform
+
+5. Fetch all available formats from the engine.
+
+6. Display Telegram Inline Keyboard.
+
+Example:
+
+🎬 Video
+144p
+240p
+360p
+480p
+720p
+1080p
+1440p
+2160p
+
+🎵 Audio
+MP3 64k
+MP3 128k
+MP3 320k
+M4A
+Opus
+
+7. User selects one format.
+
+8. Bot immediately starts downloading.
+
+9. Show a live progress message.
+
+10. After download completes, Storage Engine uploads the file to the Telegram Drive channel.
+
+11. Save:
+- File ID
+- Message ID
+- Channel ID
+- File size
+- Media type
+- Duration
+- Platform
+- Original URL
+- Title
+- Upload timestamp
+
+12. Send the uploaded Telegram file back to the user.
+
+13. Never upload duplicate files.
+If the same media + format already exists in Telegram Drive, reuse the existing Telegram File ID.
+
+14. Progress messages must edit instead of sending many messages.
+
+15. Handle download errors gracefully.
+
+16. Handle Telegram FloodWait automatically.
+
+17. Handle files larger than Telegram limits.
+
+18. Add queue support for multiple users.
+
+19. Add cancellation support.
+
+20. Update README.
+
+21. Push everything to GitHub.
+
+Do not modify the Provider Architecture.
+Do not rewrite the Download Engine.
+Only build the Telegram Bot layer using the existing architecture.
+
+
+
+```
 # provider pertama yang benar-benar dipakai.
 ```
 
