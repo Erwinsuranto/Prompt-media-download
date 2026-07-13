@@ -9,6 +9,39 @@
 ```
 
 
+Repository GitLab:
+https://gitlab.com/moniyoko/telegram-media-downloader
+
+Tolong baca dan analisis repository GitLab berikut secara langsung:
+https://gitlab.com/moniyoko/telegram-media-downloader
+
+Jangan menggunakan cache atau menebak isi repository. Pastikan Anda membaca kondisi repository terbaru.
+
+Lakukan audit lengkap dan jelaskan dalam Bahasa Indonesia:
+
+1. Arsitektur proyek.
+2. Teknologi, framework, dan library yang digunakan.
+3. Struktur folder utama.
+4. Entry point aplikasi.
+5. Semua modul download yang tersedia.
+6. API, service, controller, dan database/storage yang digunakan.
+7. Alur kerja aplikasi dari awal hingga akhir.
+8. Bug, potensi bug, code smell, masalah keamanan, dan masalah performa.
+9. File yang sudah tidak digunakan atau dapat dihapus.
+10. Berikan prioritas perbaikan dari yang paling penting hingga yang paling rendah.
+
+Di akhir jawaban, tampilkan minimal 20 file yang benar-benar berhasil Anda baca beserta lokasi filenya (contoh: src/main.ts, src/services/..., package.json, tsconfig.json, dll.) sebagai bukti bahwa Anda benar-benar membaca repository.
+
+Jika Anda tidak dapat mengakses isi repository tersebut, jangan menebak. Jelaskan dengan jelas penyebabnya dan apa yang harus dilakukan agar Anda dapat membaca seluruh isi repository.
+
+
+```
+
+
+# 
+```
+
+
 Repository: telegram-media-downloader
 
 Read the entire "telegram-media-downloader" repository before answering.
