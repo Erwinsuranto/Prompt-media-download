@@ -5,6 +5,64 @@
 
 
 
+
+# 
+```
+
+
+Repository is already up to date.
+
+Current status:
+
+- npm test: PASS (39/39)
+- Only npm run build fails.
+- Remaining build errors: 8 errors in only 3 files.
+
+Do NOT stop until `npm run build` succeeds.
+
+Requirements:
+- Read the repository and modify the code directly.
+- Commit after every logical fix.
+- Push every commit to main.
+- After every push run the build again.
+- Continue automatically until build is green.
+- Do not ask me for confirmation.
+- Do not use @ts-ignore.
+- Do not disable TypeScript.
+- Do not weaken typings.
+- Preserve runtime behaviour.
+
+Current errors to fix:
+
+1. src/core/ProcessRunner.ts
+- Cannot find module '../logs/logger'
+
+2. src/core/YtDlpClient.ts
+- config.ytDlpPath -> should use the current configuration API.
+- config.downloadTimeoutMs -> should use the current configuration API.
+
+3. src/telegram/MediaSender.ts
+- Fix thumbnail type errors using the correct grammY InputFile API.
+- Do not cast to any.
+
+Goal:
+Leave the repository production-ready with:
+
+npm test
+PASS
+
+npm run build
+PASS
+
+Then push the final commit to main and print:
+
+✔ Build passed
+✔ Tests passed
+✔ Repository is production ready
+
+
+```
+
 # 
 ```
 
