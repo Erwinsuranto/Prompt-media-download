@@ -6,6 +6,47 @@
 
 
 
+# 
+```
+
+Read and understand the repository first.
+
+Then implement ONE isolated feature that does not modify the download engine or provider architecture.
+
+Feature:
+
+Add a new Telegram command:
+
+/ping
+
+Requirements:
+
+- Reply with:
+
+🏓 Pong!
+
+Repository Status
+
+Node Version
+
+Bot Version
+
+Current Time (UTC)
+
+- Register the command correctly.
+- Follow the existing project architecture.
+- Add unit tests if applicable.
+- Update README.
+- Commit and push the changes.
+
+Do not modify unrelated files.
+Do not refactor existing code.
+Do not change the download engine.
+
+
+
+```
+
 
 # 
 ```
