@@ -4,6 +4,44 @@
 
 
 
+
+# 
+```
+
+Saya ingin menguji kemampuan Anda membuat proyek baru dari nol.
+
+JANGAN menggunakan repository yang sudah ada.
+JANGAN membaca atau mengubah repository lain.
+
+Buat proyek GitLab baru bernama:
+
+telegram-youtube-downloader
+
+Lakukan semuanya secara otomatis jika Anda memiliki izin:
+
+1. Buat repository baru.
+2. Inisialisasi proyek Node.js + TypeScript.
+3. Buat struktur folder yang rapi.
+4. Tambahkan semua file konfigurasi.
+5. Buat README.md yang lengkap.
+6. Tambahkan Dockerfile dan docker-compose.yml.
+7. Tambahkan .gitignore dan .env.example.
+8. Gunakan grammY sebagai Telegram Bot framework.
+9. Gunakan yt-dlp untuk download YouTube.
+10. Gunakan FFmpeg untuk merge audio/video.
+11. Tambahkan sistem queue.
+12. Tambahkan logging.
+13. Tambahkan error handling.
+14. Tambahkan SQLite.
+15. Tambahkan npm scripts.
+16. Commit seluruh file ke repository baru.
+
+Jika Anda tidak memiliki izin untuk membuat repository atau commit langsung, jelaskan dengan jelas keterbatasannya dan buat seluruh isi proyek di chat secara bertahap.
+
+
+
+```
+
 # 
 ```
 
