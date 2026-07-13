@@ -5,6 +5,104 @@
 
 
 
+# langsung memperbaiki
+```
+
+
+You are working directly on the repository.
+
+IMPORTANT RULES
+
+- Do NOT explain the problem.
+- Do NOT ask me to paste files.
+- Do NOT ask me to run grep, sed, cat, or any diagnostic commands.
+- Do NOT rename APIs.
+- Do NOT create a new keyboard implementation.
+- Modify the repository directly.
+- Commit every logical fix.
+- At the end run npm test yourself.
+- If tests fail, continue fixing until they pass.
+
+CURRENT STATE
+
+The repository currently contains:
+
+src/bot/keyboards.ts
+
+This file exports:
+
+- buildKindKeyboard()
+- buildFormatKeyboard()
+- buildCancelKeyboard()
+
+The old exported functions no longer exist:
+
+- buildChoiceKeyboard
+- buildVideoKeyboard
+- buildAudioKeyboard
+
+Vitest is failing with:
+
+TypeError:
+buildChoiceKeyboard is not a function
+buildVideoKeyboard is not a function
+buildAudioKeyboard is not a function
+
+The implementation itself already exists.
+Only the backward-compatible exports are missing.
+
+YOUR TASK
+
+Edit ONLY:
+
+src/bot/keyboards.ts
+
+Keep the current implementation exactly as it is.
+
+Add compatibility wrapper exports:
+
+buildChoiceKeyboard(formats)
+    -> return buildKindKeyboard(formats)
+
+buildVideoKeyboard(formats)
+    -> return buildFormatKeyboard(formats, 'video')
+
+buildAudioKeyboard(formats)
+    -> return buildFormatKeyboard(formats, 'audio')
+
+Requirements:
+
+- do not duplicate logic
+- do not modify tests
+- do not rename current API
+- keep TypeScript types
+- keep current behaviour identical
+- wrappers only delegate to the new API
+
+After editing:
+
+1. run
+
+npm test
+
+2. If any test still fails,
+continue fixing until all keyboard tests pass.
+
+3. Commit the fix.
+
+4. Show:
+
+git log --oneline -3
+
+5. Show the final npm test summary.
+
+Do NOT stop after one attempt.
+Continue fixing until keyboard tests are green.
+
+
+```
+
+
 # 
 ```
 
