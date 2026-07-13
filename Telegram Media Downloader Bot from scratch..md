@@ -9,6 +9,38 @@
 # 
 ```
 
+Do not guess.
+
+The same five tests still fail.
+
+You must inspect the ACTUAL source code and compare:
+
+- src/.../keyboards.ts
+- tests/keyboards.test.ts
+- every import/export related to buildChoiceKeyboard, buildVideoKeyboard and buildAudioKeyboard
+
+Find the exact root cause.
+
+Do not modify the architecture.
+Do not skip tests.
+Do not change the tests unless they are objectively incorrect.
+
+If the functions were renamed, update the exports.
+If the exports are correct, fix the imports.
+If Vitest loads undefined because of ESM/CJS, fix the configuration properly.
+
+After fixing:
+
+- npm run build
+- npm test
+
+must both pass with zero failed tests.
+
+Commit everything to GitHub.
+```
+# 
+```
+
 The project now runs on a real VPS.
 
 npm install succeeds.
