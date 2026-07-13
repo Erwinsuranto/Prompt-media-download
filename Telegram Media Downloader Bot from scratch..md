@@ -9,6 +9,37 @@
 # 
 ```
 
+
+The project is no longer buildable.
+
+`npm run build` fails with 41 TypeScript errors across 11 files.
+
+Do NOT work on Vitest first.
+
+Your only goal is to restore a clean build.
+
+Requirements:
+
+1. Fix every TypeScript error until `npm run build` succeeds with zero errors.
+2. Do not suppress errors with `any`, `@ts-ignore`, or disabling strict mode.
+3. Keep the existing architecture (Download Engine, Provider system, Storage Engine).
+4. Update interfaces and implementations consistently.
+5. If an interface changed, update every implementation instead of weakening the interface.
+6. Do not remove features.
+7. After build is green, run `npm test` and fix remaining test failures.
+8. Commit all fixes to GitHub.
+
+The project is not considered fixed until BOTH commands succeed:
+
+npm run build
+npm test
+
+
+```
+
+# 
+```
+
 Do not guess.
 
 The same five tests still fail.
