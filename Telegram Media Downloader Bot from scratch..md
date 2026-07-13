@@ -5,6 +5,37 @@
 
 
 
+# 
+```
+
+Stop guessing.
+
+Do not propose theoretical fixes.
+
+Use GitHub Actions as the source of truth.
+
+Tasks:
+
+1. Push all required changes to the repository.
+2. Create or update a GitHub Actions workflow that runs:
+   - npm install
+   - npm run build
+   - npm test
+3. Commit and push everything.
+4. Wait for the workflow to finish.
+5. Fix every failing build until GitHub Actions is completely green.
+6. Repeat commit → push → Actions until:
+   - npm run build passes
+   - npm test passes
+   - GitHub Actions is green.
+7. Do not tell me it is fixed unless the GitHub Actions workflow has actually passed.
+8. If Actions cannot run, explain the exact reason (permissions, workflow disabled, missing token, repository settings, etc.) and fix it if you have permission.
+
+I want evidence from GitHub Actions, not assumptions.
+
+
+
+```
 
 # 
 ```
