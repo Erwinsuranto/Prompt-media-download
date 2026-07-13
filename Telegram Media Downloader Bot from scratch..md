@@ -5,6 +5,69 @@
 
 
 
+
+# 
+```
+
+There is only ONE failing test left.
+
+Do NOT rename APIs.
+Do NOT modify tests.
+Do NOT change callback values.
+
+Current failure:
+
+tests/keyboards.test.ts
+video keyboard
+orders qualities by the standard ladder, highest first
+
+Expected:
+
+format:a
+format:c
+format:d
+
+Received:
+
+format:d
+format:c
+format:a
+
+Root cause:
+The video quality sort order inside buildFormatKeyboard() is reversed.
+
+Fix ONLY the ordering logic for VIDEO formats.
+
+Requirements:
+
+- Use the existing VIDEO_LADDER.
+- Preserve callback_data.
+- Preserve wrappers.
+- Preserve audio sorting.
+- Preserve buildKindKeyboard().
+- Preserve buildCancelKeyboard().
+- Do not modify tests.
+
+After fixing:
+
+run
+
+npm test
+
+Repeat until ALL tests pass.
+
+Then commit.
+
+Show:
+
+git log --oneline -3
+
+and the final npm test summary.
+
+
+
+```
+
 # langsung memperbaiki
 ```
 
