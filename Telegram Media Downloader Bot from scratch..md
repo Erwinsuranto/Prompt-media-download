@@ -5,6 +5,87 @@
 
 
 
+# Prompt Build Fix – Batch 1
+```
+
+
+The unit tests are now COMPLETE.
+
+Current status:
+
+✓ npm test
+39/39 tests passed.
+
+Do NOT modify anything related to the keyboard implementation anymore.
+
+The remaining task is fixing TypeScript build errors.
+
+Current command:
+
+npm run build
+
+There are 41 TypeScript errors across 11 files.
+
+Your job is NOT to fix all 41 errors in one commit.
+
+Instead:
+
+1. Run npm run build.
+2. Fix ONLY the first logical group of errors.
+3. Keep npm test green after every fix.
+4. Commit.
+5. Repeat.
+
+Rules:
+
+- Never edit tests.
+- Never disable TypeScript.
+- Never use any.
+- Never use @ts-ignore.
+- Never remove interfaces.
+- Never bypass type checking.
+- Keep backwards compatibility.
+- Do not rewrite unrelated modules.
+
+Priority order:
+
+1.
+src/bot/createBot.ts
+
+2.
+src/cache/MediaCacheService.ts
+
+3.
+src/commands/admin.ts
+
+4.
+src/core/DownloadManager.ts
+
+After each logical fix:
+
+Run
+
+npm test
+
+Then
+
+npm run build
+
+Continue until the first four files are completely clean.
+
+Commit every logical fix.
+
+At the end print:
+
+git log --oneline -5
+
+remaining TypeScript error count
+
+Do NOT stop after one attempt.
+Continue until those first four files compile.
+
+
+```
 
 # 
 ```
