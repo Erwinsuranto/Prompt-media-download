@@ -4,6 +4,52 @@
 
 
 
+
+# 
+```
+
+
+The failing tests are correct.
+
+Do NOT modify tests/keyboards.test.ts.
+
+The project was refactored from:
+
+- buildChoiceKeyboard()
+- buildVideoKeyboard()
+- buildAudioKeyboard()
+
+to:
+
+- buildKindKeyboard()
+- buildFormatKeyboard()
+
+Restore backward compatibility by exporting wrapper functions:
+
+buildChoiceKeyboard(formats)
+→ call buildKindKeyboard(formats)
+
+buildVideoKeyboard(formats)
+→ call buildFormatKeyboard(formats, 'video')
+
+buildAudioKeyboard(formats)
+→ call buildFormatKeyboard(formats, 'audio')
+
+Do not change behavior.
+Do not rename tests.
+Do not remove the new API.
+
+Only restore the missing exports so old callers continue working.
+
+After that run:
+
+npm test
+
+Commit and push if all keyboard tests pass.
+
+
+```
+
 # melakukan audit penuh
 ```
 
