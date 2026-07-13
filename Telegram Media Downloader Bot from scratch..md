@@ -6,6 +6,46 @@
 
 
 
+# 
+```
+
+
+You are taking over this repository from another AI agent (Claude Opus 4.8).
+
+Do not modify any code yet.
+
+Your first task is to perform a COMPLETE repository audit.
+
+Repository:
+https://github.com/zenolambetuna/telegram-media-downloader
+
+Audit requirements:
+
+1. Read the entire repository source code.
+2. Read the latest commit history.
+3. Compare the latest commits to understand what Claude changed.
+4. Identify all architectural changes.
+5. Identify every unfinished refactor.
+6. Detect broken interfaces, renamed functions, deleted files, missing exports, incompatible types, and outdated imports.
+7. Determine why:
+   - npm test passes
+   - but npm run build still fails.
+8. Identify the true root cause instead of guessing.
+
+Do NOT modify any files during this audit.
+
+Produce a report containing:
+- Repository architecture overview.
+- Files modified in the recent commits.
+- Incomplete refactors.
+- Broken dependencies between modules.
+- Build blockers grouped by root cause.
+- Recommended repair order from highest to lowest priority.
+
+Only after the audit is complete, wait for my approval before making any code changes.
+
+
+```
 
 
 # 
