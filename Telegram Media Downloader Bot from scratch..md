@@ -5,6 +5,43 @@
 
 
 
+
+# 
+```
+
+
+Do not delete any more files.
+
+The repository is already up to date.
+All tests pass (39/39).
+
+Your only task is to fix the remaining TypeScript build errors.
+
+Run:
+
+npm run build
+
+Fix the errors in small logical batches.
+
+After every batch:
+
+1. npm run build
+2. npm test
+3. Commit
+4. Push
+
+Repeat until npm run build succeeds with 0 TypeScript errors.
+
+Do not modify tests.
+Do not use any.
+Do not use @ts-ignore.
+Do not disable TypeScript.
+Keep existing behaviour unchanged.
+
+
+```
+
+
 # Prompt Build Fix – Batch 1
 ```
 
