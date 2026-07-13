@@ -4,6 +4,75 @@
 
 
 
+# 
+```
+
+Buat proyek baru bernama "telegram-youtube-downloader".
+
+Tujuan:
+Membuat bot Telegram profesional untuk download YouTube.
+
+Persyaratan:
+
+- Gunakan TypeScript.
+- Gunakan Node.js terbaru.
+- Framework Telegram: grammY.
+- Gunakan yt-dlp sebagai backend downloader.
+- Gunakan FFmpeg untuk merge audio/video.
+- Gunakan SQLite untuk database.
+- Gunakan struktur proyek yang bersih dan modular.
+
+Fitur:
+
+1. Download video YouTube.
+2. Download audio MP3.
+3. Pilihan kualitas:
+   - 144p
+   - 360p
+   - 720p
+   - 1080p (jika tersedia)
+4. Thumbnail.
+5. Progress download.
+6. Queue download.
+7. Rate limit user.
+8. Cache file agar URL yang sama tidak di-download ulang.
+9. Logging.
+10. Error handling.
+11. Konfigurasi melalui file .env.
+12. Dockerfile.
+13. docker-compose.yml.
+14. README.md lengkap.
+15. Unit test dasar.
+
+Gunakan arsitektur modular, misalnya:
+
+src/
+├── bot/
+├── commands/
+├── callback/
+├── downloader/
+├── ffmpeg/
+├── queue/
+├── cache/
+├── database/
+├── services/
+├── telegram/
+├── config/
+├── logger/
+├── types/
+├── utils/
+
+Buat seluruh proyek hingga siap dijalankan dengan:
+
+npm install
+npm run build
+npm start
+
+Setelah selesai, jelaskan struktur folder dan cara menjalankannya.
+
+
+
+```
 
 # 
 ```
