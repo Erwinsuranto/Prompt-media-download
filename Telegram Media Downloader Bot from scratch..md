@@ -9,6 +9,29 @@
 # 
 ```
 
+Baca dan pahami seluruh repository ini terlebih dahulu.
+
+Setelah memahami struktur project, lanjutkan memperbaiki repository secara bertahap.
+
+Aturan:
+- Jangan mengubah perilaku fitur yang sudah berjalan.
+- Jangan menggunakan @ts-ignore.
+- Jangan menonaktifkan TypeScript.
+- Jangan menghapus fitur yang sudah ada.
+- Ikuti arsitektur project yang sudah ada.
+- Perbaiki satu kelompok error dalam satu commit.
+- Setelah selesai satu kelompok error, commit ke branch yang sedang aktif.
+- Lanjutkan ke kelompok error berikutnya sampai seluruh build berhasil.
+- Jika membutuhkan klarifikasi, jelaskan alasannya.
+- Setelah selesai, berikan daftar file yang diubah, alasan perubahan, hasil build, hasil test, dan hash commit terakhir.
+
+
+
+```
+
+# 
+```
+
 Repository:
 https://github.com/zenolambetuna/telegram-media-downloader
 
