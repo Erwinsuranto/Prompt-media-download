@@ -9,6 +9,39 @@
 # 
 ```
 
+Repository:
+https://github.com/zenolambetuna/telegram-media-downloader
+
+This is a new chat.
+
+Please start by reading and understanding this public GitHub repository.
+
+I am NOT asking you to edit files, commit, push, deploy, or act as a coding agent.
+
+Your task is only to analyze the repository.
+
+Please:
+
+1. Read the repository structure.
+2. Identify the application architecture.
+3. Find the application entry points.
+4. Understand the build and test system.
+5. Read the latest commits to understand recent refactors.
+6. Identify the important modules and how they interact.
+7. Explain the purpose of each major directory.
+8. Point out any architectural issues or inconsistencies you notice.
+
+Do not invent information. Base your answer only on what you can read from the repository.
+
+If there is anything you cannot access, clearly tell me what it is instead of guessing.
+
+
+
+```
+
+# 
+```
+
 Read and understand the repository first.
 
 Then implement ONE isolated feature that does not modify the download engine or provider architecture.
