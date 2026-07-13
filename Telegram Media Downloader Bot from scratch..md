@@ -9,6 +9,44 @@
 # 
 ```
 
+The project now runs on a real VPS.
+
+npm install succeeds.
+
+Most tests pass.
+
+Only 5 tests fail, all in tests/keyboards.test.ts.
+
+Current errors:
+
+TypeError:
+- buildChoiceKeyboard is not a function
+- buildVideoKeyboard is not a function
+
+Do not hide or disable the tests.
+
+Find the real cause.
+
+If those functions were renamed, update the tests.
+
+If they should still exist, restore the proper exports.
+
+If the API changed intentionally, update every caller consistently.
+
+Requirements:
+
+- npm test must pass with zero failed tests.
+- Do not remove functionality.
+- Do not skip tests.
+- Keep the current architecture.
+- Push the fixes to GitHub.
+
+
+
+```
+# 
+```
+
 Do not implement any new features.
 
 I want a full audit of the current repository.
