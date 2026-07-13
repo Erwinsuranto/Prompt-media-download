@@ -10,6 +10,51 @@
 # 
 ```
 
+Repository:
+https://github.com/zenolambetuna/telegram-media-downloader
+
+This is a new chat.
+
+Before making any code changes, I want you to familiarize yourself with the repository.
+
+Your first task is to fully understand the project.
+
+Please:
+
+- Read the repository structure.
+- Understand how every module is connected.
+- Identify the application entry point.
+- Understand the build system and test system.
+- Understand the architecture.
+- Read the latest commits to understand recent refactors.
+- Identify renamed, moved, or deleted files.
+- Understand the current APIs and coding patterns.
+- Build a complete mental model of the project.
+
+Do not modify any code.
+Do not commit.
+Do not push.
+
+Only read and understand the repository.
+
+After that, explain:
+
+- What this project does.
+- How the architecture is organized.
+- The important modules.
+- The current build flow.
+- The current test flow.
+- Your understanding of the repository.
+
+Once you fully understand the repository, wait for my next instruction before making any changes.
+
+
+
+```
+
+# 
+```
+
 
 
 Read and understand the entire repository before making any changes.
