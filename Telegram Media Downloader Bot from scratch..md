@@ -7,6 +7,42 @@
 
 
 
+
+# 
+```
+
+
+You already have access to my GitHub repository through GitHub MCP.
+
+Do not stop after one response.
+
+Continue working until every TypeScript build error is fixed or until you reach a real technical limitation.
+
+Workflow:
+
+1. Read the repository source code.
+2. Sync with the latest main branch.
+3. Run the build.
+4. Fix the TypeScript errors in logical batches.
+5. Run the build again.
+6. Run the tests.
+7. Commit and push only when a batch is successfully fixed.
+8. Continue automatically with the next batch.
+
+Repeat this process until:
+- npm run build succeeds with zero TypeScript errors.
+- npm test passes.
+- The repository builds successfully.
+
+Do not ask me to copy code unless you truly cannot access the repository.
+Do not stop after fixing only one issue.
+If you encounter a real limitation, explain exactly what prevented you from continuing and what evidence you need.
+
+Otherwise, continue working autonomously until the build is green.
+
+
+```
+
 # 
 ```
 
