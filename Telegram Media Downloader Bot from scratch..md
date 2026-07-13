@@ -5,6 +5,35 @@
 
 
 
+
+
+# 
+```
+
+
+Continue working on the existing Telegram Media Downloader repository.
+
+Do not create a new architecture.
+Do not rewrite the project.
+
+Your task is only to implement the Telegram Bot layer using the existing Download Engine and Storage Engine.
+
+Requirements:
+- User sends a supported URL.
+- Detect the provider automatically.
+- Show available video/audio formats using Telegram Inline Keyboard.
+- Download the selected format.
+- Upload the file to the configured Telegram storage channel.
+- Save Telegram File ID and metadata.
+- Reuse existing Telegram File ID if the same media already exists.
+- Return the uploaded Telegram file to the user.
+- Handle progress, retries, FloodWait and errors.
+- Push all completed changes to GitHub.
+
+Work only on this repository.
+
+
+```
 # lapisan bot Telegram
 ```
 
