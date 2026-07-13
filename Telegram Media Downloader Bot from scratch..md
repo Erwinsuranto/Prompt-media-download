@@ -9,6 +9,23 @@
 # 
 ```
 
+
+Ini adalah chat dengan akun baru.
+
+Sebelum mengerjakan apa pun, baca dan pahami repository GitHub yang sedang terhubung pada workspace ini.
+
+Pelajari struktur project, arsitektur, alur aplikasi, modul utama, serta build dan test.
+
+Jangan mengubah kode, jangan commit, dan jangan push.
+
+Setelah selesai memahami repository, beritahu saya secara singkat bahwa kamu sudah mengenali struktur project dan siap menerima instruksi berikutnya.
+
+
+```
+
+# 
+```
+
 Baca dan pahami seluruh repository ini terlebih dahulu.
 
 Setelah memahami struktur project, lanjutkan memperbaiki repository secara bertahap.
