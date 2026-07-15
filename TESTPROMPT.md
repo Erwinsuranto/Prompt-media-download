@@ -8,6 +8,56 @@
 
 
 
+#
+```
+Audit pipeline TikTok pada Telegram Media Downloader.
+
+Masalah:
+
+Bot berhasil memanggil yt-dlp tetapi yt-dlp mengembalikan:
+
+ERROR:
+[TikTok] Video not available
+
+Bot kemudian mengubahnya menjadi:
+UNAVAILABLE_MEDIA
+This media is unavailable
+
+Tugas:
+
+1. Audit seluruh alur provider TikTok.
+2. Cari penyebab kenapa yt-dlp mengembalikan "Video not available".
+3. Cek apakah:
+   - URL vt.tiktok.com harus di-resolve menjadi URL asli.
+   - cookies.txt tidak digunakan.
+   - user-agent salah.
+   - extractor TikTok memerlukan header tambahan.
+   - yt-dlp terlalu lama versinya.
+4. Jalankan perintah berikut dan tampilkan hasilnya:
+
+yt-dlp --version
+
+yt-dlp -F "<url>"
+
+yt-dlp -j "<url>"
+
+5. Jika perlu gunakan:
+--cookies cookies.txt
+atau
+--cookies-from-browser
+
+6. Jika vt.tiktok.com masih dipakai, lakukan HTTP redirect terlebih dahulu hingga memperoleh URL www.tiktok.com/@.../video/... sebelum diberikan ke yt-dlp.
+
+7. Jangan hanya menjelaskan.
+Perbaiki source code yang diperlukan.
+
+Berikan FULL SOURCE CODE untuk setiap file yang diubah.
+Jangan diff.
+Jangan potongan kode.
+Satu file penuh setiap kali.
+
+
+```
 
 #
 ```Build sekarang gagal pada:
