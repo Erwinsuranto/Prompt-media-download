@@ -8,6 +8,57 @@
 
 
 
+
+#
+```Build sekarang gagal pada:
+
+src/downloader/FFmpegService.ts
+
+Error:
+
+TS1005: '}' expected
+
+Lokasi:
+
+src/downloader/FFmpegService.ts
+baris 42-43
+
+Parser menemukan:
+
+logger.info({
+
+tetapi object tersebut tidak ditutup.
+
+Tugas:
+
+1. Audit seluruh file FFmpegService.ts.
+2. Cari semua:
+   - kurung kurawal { }
+   - tanda (
+   - tanda [
+   - object literal
+   - logger.info(...)
+   - logger.error(...)
+   - logger.warn(...)
+   - logger.debug(...)
+3. Pastikan seluruh kurung seimbang.
+4. Kirim ulang FULL FILE FFmpegService.ts dari baris pertama sampai terakhir.
+5. Jangan kirim diff.
+6. Jangan kirim patch.
+7. Jangan kirim potongan kode.
+8. Kirim hanya file lengkap yang sudah valid.
+9. Setelah diperbaiki jalankan:
+   npm run build
+10. Jika masih ada error, lanjutkan memperbaiki file berikutnya sampai build benar-benar sukses.
+
+PENTING:
+Jangan menganggap hanya satu kurung yang kurang. Audit seluruh file karena kemungkinan ada beberapa syntax yang rusak akibat proses edit sebelumnya.
+
+
+
+```
+
+
 #
 ```
 
