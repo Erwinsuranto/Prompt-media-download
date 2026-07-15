@@ -10,6 +10,41 @@
 
 #
 ```
+Kamu menghasilkan file TypeScript yang tidak valid.
+
+Build gagal karena kamu memasukkan teks penjelasan ke dalam source code.
+
+Error menunjukkan bahwa di dalam file:
+
+src/telegram/UploadManager.ts
+
+terdapat kalimat seperti:
+
+"Selesai. 14 file di atas adalah semua file source code..."
+
+Kalimat tersebut bukan kode TypeScript sehingga parser gagal.
+
+Tugas:
+
+1. Audit seluruh file yang kamu kirim.
+2. Pastikan TIDAK ADA teks penjelasan, markdown, atau komentar di luar syntax TypeScript.
+3. Hapus semua kalimat seperti:
+   - Selesai...
+   - Setelah mengganti...
+   - Jalankan...
+   - Bagian berikutnya...
+   - File berikut...
+   - Penjelasan AI...
+4. Kirim ulang FULL FILE src/telegram/UploadManager.ts dari baris pertama sampai terakhir.
+5. Setelah itu audit seluruh file lain agar tidak ada teks chat yang ikut masuk ke source code.
+6. Jalankan npm run build sampai berhasil.
+7. Jangan kirim diff atau patch. Kirim FULL FILE yang valid.
+
+
+```
+
+#
+```
 Setelah commit terbaru berhasil di-pull ke VPS (commit 755333a), proses build gagal.
 
 Error:
