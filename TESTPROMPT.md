@@ -3,6 +3,53 @@
 
 
 
+# Minta Cline fokus ke callback, bukan yt-dlp
+```
+
+Stop investigating yt-dlp for now.
+
+The bigger issue is that pressing the Telegram inline button does absolutely nothing.
+
+Current behavior:
+
+- Keyboard is displayed successfully.
+- Buttons:
+  🎵 Audio
+  ❌ Cancel
+- Pressing either button produces NO new logs.
+- The last log is:
+  [DEBUG] Message sent
+
+This means callback_query updates are probably never handled.
+
+Please inspect the COMPLETE Telegram callback flow.
+
+Verify:
+
+1. bot.on("callback_query") or equivalent is registered.
+2. CallbackQuery updates are reaching the application.
+3. callback_data generated for every button.
+4. callback_data matches the parser.
+5. answerCallbackQuery() is called.
+6. Session lookup works.
+7. No exception is swallowed.
+8. Add logs at the FIRST line of the callback handler.
+
+Required logs:
+
+[CALLBACK] update received
+[CALLBACK] callback_data
+[CALLBACK] session found
+[CALLBACK] selected action
+[CALLBACK] download started
+[CALLBACK] error
+
+If pressing the button does not even print "[CALLBACK] update received", find why callback_query updates are not being processed and fix the root cause.
+
+Do not continue debugging yt-dlp until callback_query works.
+
+```
+
 #
 ```
 
