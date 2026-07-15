@@ -7,6 +7,47 @@
 
 #
 ```
+
+You are working directly inside the Telegram Drive repository. Do not stop at analysis. Modify the code until the problem is completely fixed.
+
+Problem:
+The /my-files page renders two headers.
+The old template header with "Shared with me" and "Collaborate" is still displayed above the Telegram Drive header.
+
+Tasks:
+1. Find the exact component rendering "Shared with me" and "Collaborate".
+2. Search the entire project including:
+   - app/
+   - components/
+   - layouts/
+   - providers/
+   - templates/
+   - src/
+3. Find why the old template header is rendered together with the Telegram Drive header.
+4. Remove the old template header completely. Do NOT hide it with CSS.
+5. Keep only one Telegram Drive header across desktop and mobile.
+6. Remove any duplicate layouts, providers, wrappers or unused components that cause the duplicate UI.
+7. Remove dead code related to the old template if it is no longer used.
+8. Run:
+   - npm run build
+   - npm start
+9. Verify that:
+   - "Shared with me" is no longer visible.
+   - "Collaborate" is no longer visible.
+   - Only one Telegram Drive header remains.
+   - All existing features (Upload, My Files, Search, Folder, Download, Navigation) continue working.
+10. Save all modified files.
+11. Commit the changes with message:
+    Fix duplicate header on my-files
+12. Push the commit to the current branch.
+
+Do not stop after finding the problem. Continue until the duplicate header is completely removed and verified. At the end, list every modified file and explain the root cause.
+
+```
+
+
+#
+```
 Audit and fix the entire Telegram Drive project without asking for confirmation. Work directly in the repository and apply all necessary changes.
 
 Current issues:
