@@ -3,6 +3,55 @@
 
 
 
+
+#
+```
+The debug logs identified the root cause.
+
+Current logs show:
+
+FormatResolver.resolve():
+total = 1
+video = 0
+audio = 1
+
+The keyboard is correct. It only displays Audio because no video formats exist.
+
+Do NOT modify keyboards, sessions, or FormatResolver anymore.
+
+Find why the TikTok provider only returns audio.
+
+Trace the pipeline:
+
+yt-dlp JSON
+→ provider parser
+→ DownloadArtifact
+→ inspect()
+→ metadata.formats
+
+Add debug logs showing:
+
+- raw yt-dlp formats count
+- every format ext
+- vcodec
+- acodec
+- width
+- height
+- protocol
+- format_id
+
+Check whether video formats are filtered incorrectly.
+
+If TikTok returns progressive MP4 with both video and audio, keep it.
+
+If video-only formats exist, keep them.
+
+Do not discard formats because width/height is missing.
+
+The goal is that metadata.formats contains video entries before FormatResolver runs.
+
+
+```
 #
 ```
 The TikTok format resolver has already been fixed and tested.
