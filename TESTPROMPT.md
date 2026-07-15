@@ -2,6 +2,61 @@
 
 
 
+#
+```
+
+Audit dan ubah seluruh alur pemilihan format download pada Telegram Media Downloader.
+
+Target perilaku yang diinginkan:
+
+1. Setelah pengguna mengirim link (TikTok, YouTube, Facebook, Instagram, X, dll), bot JANGAN langsung menampilkan tombol MP3 saja.
+
+2. Jika media memiliki VIDEO, tampilkan keyboard:
+
+🎥 MP4
+🎵 MP3
+❌ Cancel
+
+3. Jika pengguna menekan MP4:
+- Bila platform memiliki beberapa resolusi (misalnya YouTube), tampilkan daftar resolusi terlebih dahulu, misalnya:
+  - 2160p
+  - 1440p
+  - 1080p
+  - 720p
+  - 480p
+  - 360p
+  - Cancel
+- Setelah pengguna memilih resolusi, baru mulai download.
+
+4. Jika platform tidak menyediakan pilihan resolusi (misalnya sebagian besar TikTok, Facebook, Instagram, X), setelah tombol MP4 ditekan bot langsung mendownload video kualitas terbaik tanpa menampilkan menu resolusi.
+
+5. Jika pengguna menekan MP3, langsung download audio.
+
+6. Jangan pernah menampilkan tombol MP3 saja jika video tersedia.
+
+7. Seluruh platform harus menggunakan alur yang sama:
+Link → Pilih MP4 / MP3 / Cancel → (Jika perlu pilih resolusi) → Download.
+
+8. Refactor kode agar keyboard dibuat dari satu komponen bersama (shared keyboard builder), bukan logika terpisah untuk setiap platform.
+
+9. Audit callback query dan state management agar semua tombol berfungsi.
+
+10. Setelah selesai lakukan pengujian nyata pada:
+- TikTok
+- YouTube
+- Facebook
+- Instagram
+- X
+
+Pastikan:
+✓ TikTok menampilkan MP4, MP3, Cancel.
+✓ YouTube menampilkan MP4, MP3, Cancel lalu pilihan resolusi sebelum download video.
+✓ Platform tanpa pilihan resolusi langsung mendownload setelah MP4 ditekan.
+✓ Semua callback bekerja dengan benar.
+
+Jangan hanya menjelaskan. Langsung ubah source code dan tampilkan file yang diubah beserta hasil pengujiannya.
+
+```
 
 
 #
