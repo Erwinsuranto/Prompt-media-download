@@ -3,6 +3,52 @@
 
 
 
+#
+```
+The TikTok URL is a VIDEO, but the bot only shows the 🎵 Audio button.
+
+Current debug logs show:
+
+FormatResolver.resolve():
+total: 1
+video: 0
+audio: 1
+
+The keyboard is:
+🎵 Audio
+❌ Cancel
+
+This is incorrect. The problem is NOT the Telegram keyboard. The problem is somewhere before FormatResolver.
+
+Please perform a complete end-to-end investigation from MetadataService until FormatResolver.
+
+Tasks:
+1. Add detailed debug logs immediately after yt-dlp returns metadata.
+2. Print the complete raw formats array.
+3. For every format print:
+   - format_id
+   - ext
+   - protocol
+   - width
+   - height
+   - resolution
+   - fps
+   - vcodec
+   - acodec
+   - dynamic_range
+   - format_note
+   - filesize
+4. Compare the raw yt-dlp formats with the formats passed into FormatResolver.
+5. Identify exactly where video formats disappear.
+6. If MetadataService, normalization, parser, filtering, or mapping removes video formats, fix the root cause instead of adding workarounds.
+7. Preserve audio-only handling for true audio posts, but ensure TikTok video posts expose all available video qualities plus Audio.
+8. Add regression tests so this bug cannot happen again.
+9. Run all tests, build the project, and verify that a normal TikTok video produces video format buttons (360p/540p/720p/1080p when available) in addition to the Audio button.
+
+Do not stop after adding logs. Continue until the root cause is found, fixed, tested, and verified.
+
+
+```
 
 #
 ```
