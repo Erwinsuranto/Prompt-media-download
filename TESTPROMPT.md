@@ -7,7 +7,109 @@
 
 
 
+```
+Audit penuh bug TikTok pada Telegram Media Downloader.
 
+Kondisi saat ini:
+
+- Build sudah berhasil.
+- Bot berjalan normal.
+- URL vt.tiktok.com sudah di-resolve menjadi URL asli.
+- URL yang dikirim ke yt-dlp sekarang adalah:
+
+https://www.tiktok.com/@digital.cell78/video/7652560949013908757
+
+Tetapi yt-dlp masih mengembalikan:
+
+ERROR:
+[TikTok] 7652560949013908757: Video not available
+
+Bot kemudian mengirim:
+
+This media is unavailable
+
+Saya tidak ingin workaround.
+Saya ingin penyebab sebenarnya ditemukan.
+
+Tugas:
+
+1. Audit seluruh pipeline TikTok mulai dari:
+   - URL Resolver
+   - TikTok Provider
+   - MetadataService
+   - YtDlpClient
+   - DownloadEngine
+   - FFmpegService
+   - Telegram Upload
+
+2. Jalankan investigasi pada command yt-dlp yang benar-benar dipakai aplikasi.
+
+3. Cari apakah command yang dikirim ke yt-dlp berbeda dengan command manual.
+
+4. Audit semua argument yt-dlp seperti:
+   --extractor-args
+   --referer
+   --user-agent
+   --cookies
+   --cookies-from-browser
+   --no-playlist
+   --dump-single-json
+   --no-warnings
+
+5. Cek apakah extractor TikTok sekarang membutuhkan argument baru.
+
+6. Jalankan pembandingan:
+
+yt-dlp "<url>"
+yt-dlp -j "<url>"
+yt-dlp -F "<url>"
+
+serta command yang dipakai aplikasi.
+
+Bandingkan hasilnya.
+
+7. Jika URL tersebut sebenarnya masih bisa di-download menggunakan browser atau yt-dlp terbaru, cari penyebab kenapa aplikasi gagal.
+
+8. Jika penyebabnya karena cookies, implementasikan loading cookies otomatis.
+
+9. Jika penyebabnya karena extractor TikTok, perbaiki implementasi.
+
+10. Jika penyebabnya karena URL resolver, perbaiki resolver.
+
+11. Tambahkan logging lengkap:
+
+- command yt-dlp final
+- exit code
+- stderr
+- stdout
+- resolved URL
+- cookies yang digunakan
+- user-agent
+- extractor args
+
+12. Setelah selesai jalankan build sampai sukses.
+
+13. Jangan berhenti setelah menemukan satu bug.
+Lanjut audit sampai TikTok dapat didownload kembali.
+
+PENTING:
+
+Jangan kirim diff.
+
+Jangan kirim patch.
+
+Jangan kirim potongan kode.
+
+Untuk setiap file yang diubah, kirim SATU FILE LENGKAP (full source code) mulai dari baris pertama sampai terakhir.
+
+Jika ada 8 file berubah, kirim 8 file penuh.
+
+Jangan menggunakan placeholder "...", "// unchanged", atau sejenisnya.
+
+Pastikan source code bisa langsung saya replace tanpa meminta file lanjutan.
+
+
+```
 #
 ```
 Audit pipeline TikTok pada Telegram Media Downloader.
