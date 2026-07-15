@@ -4,6 +4,42 @@
 
 
 
+#
+```
+
+Tolong audit dan perbaiki bug pada project Telegram Media Downloader.
+
+Masalah:
+- Download video TikTok gagal.
+- Setelah memilih format video, bot mencoba upload ke Telegram tetapi selalu muncul pesan:
+  "Upload failed after retries"
+- MP3 masih bisa, tetapi video gagal.
+- Tombol video tidak berfungsi dengan benar.
+
+Lakukan audit menyeluruh pada seluruh alur download:
+
+1. Audit proses pengambilan URL video dari TikTok.
+2. Audit proses download file video.
+3. Audit ukuran file sebelum upload.
+4. Audit stream download agar tidak korup.
+5. Audit upload ke Telegram (sendVideo/sendDocument).
+6. Audit timeout upload.
+7. Audit retry mechanism karena saat ini retry tetap gagal.
+8. Audit apakah file sementara (temp file) terhapus sebelum upload selesai.
+9. Audit penggunaan ffmpeg jika video diproses terlebih dahulu.
+10. Audit permission folder temp dan folder download.
+11. Audit semua error yang ditangkap try/catch, tampilkan log lengkap.
+12. Audit apakah upload gagal karena Telegram API, ukuran file, atau koneksi.
+
+Setelah menemukan penyebabnya:
+- Perbaiki kode secara langsung.
+- Jangan menghapus fitur yang sudah berjalan.
+- Pastikan video TikTok berhasil dikirim ke Telegram.
+- Pastikan YouTube, Facebook, Instagram, X, dan platform lain tetap berfungsi.
+- Tambahkan logging yang jelas agar jika upload gagal dapat diketahui penyebab pastinya.
+- Berikan ringkasan file yang diubah beserta alasan setiap perubahan.
+
+```
 
 #
 ```
