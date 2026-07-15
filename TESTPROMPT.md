@@ -2,6 +2,55 @@
 
 
 
+
+#
+```
+The TikTok format resolver has already been fixed and tested.
+
+The VPS is running the latest code.
+
+Problem:
+- TikTok preview appears.
+- Metadata is correct.
+- Only "Audio" and "Cancel" buttons are displayed.
+- No "Video" button is created.
+
+This means the bug is NOT in FormatResolver anymore.
+
+Audit the complete callback/button generation flow.
+
+Trace the data step by step:
+
+1. yt-dlp metadata
+2. FormatResolver output
+3. DownloadArtifact creation
+4. Session storage
+5. Inline keyboard builder
+6. Callback data
+7. Telegram reply
+
+For every stage print logs:
+- number of video formats
+- number of audio formats
+- media type
+- quality
+- callback payload
+
+Find exactly where video formats disappear.
+
+Do NOT guess.
+
+Do NOT add workaround.
+
+Find the first place where the video list becomes empty and fix the root cause.
+
+After fixing:
+- run tests
+- npm run build
+- verify TikTok keyboard contains Video + Audio buttons.
+
+
+```
 #
 ```
 
