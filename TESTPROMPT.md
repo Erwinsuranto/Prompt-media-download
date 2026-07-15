@@ -3,6 +3,39 @@
 
 
 
+
+
+#
+```
+Kamu menampilkan commit 0905341, tetapi repository GitHub saya hanya memiliki commit c1eb752.
+
+Di VPS:
+
+- git pull -> Already up to date
+- git push -> Everything up-to-date
+- origin/main -> c1eb752
+
+Artinya commit 0905341 tidak ada di repository GitHub yang digunakan VPS.
+
+Tolong audit Git yang sedang kamu gunakan.
+
+Tampilkan:
+1. git remote -v
+2. git branch
+3. git status
+4. git log --oneline -5
+5. commit hash HEAD
+6. repository URL yang sedang kamu edit
+
+Jika commit 0905341 belum ada di GitHub, push commit tersebut ke repository:
+https://github.com/zenolambetuna/telegram-media-downloader.git
+
+Setelah berhasil push, tampilkan hash commit terbaru yang sudah ada di origin/main.
+
+
+```
+
+
 #
 ```
 # TASK: Refactor Total Media Selection Pipeline
