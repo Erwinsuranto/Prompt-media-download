@@ -7,6 +7,62 @@
 
 #
 ```
+Kerjakan langsung di repository Telegram Drive. Jangan berhenti di tahap analisis. Ubah kode sampai masalah benar-benar selesai.
+
+Masalah yang harus diperbaiki:
+
+Pada halaman "My Files" masih muncul header/template lama dengan tombol:
+- Shared with me
+- Collaborate
+
+Padahal halaman seharusnya hanya menampilkan header Telegram Drive.
+
+Tugas:
+
+1. Cari sumber komponen yang menampilkan "Shared with me" dan "Collaborate".
+2. Audit seluruh project, terutama:
+   - app/
+   - components/
+   - layouts/
+   - providers/
+   - templates/
+   - src/
+3. Temukan penyebab utama (root cause) kenapa header lama masih dirender bersama header Telegram Drive.
+4. Hapus header/template lama dari akar masalah, bukan disembunyikan menggunakan CSS.
+5. Pastikan hanya ada SATU header Telegram Drive pada desktop maupun mobile.
+6. Periksa apakah ada layout bertumpuk, nested layout, provider, wrapper, atau komponen yang dirender dua kali, lalu perbaiki.
+7. Jangan menghapus fitur Telegram Drive seperti:
+   - Upload
+   - My Files
+   - New Folder
+   - Search
+   - Download
+   - Navigation
+8. Hapus kode, import, dan komponen template lama yang sudah tidak digunakan.
+9. Jalankan:
+   npm run build
+   npm start
+10. Pastikan:
+   - Tombol "Shared with me" sudah hilang.
+   - Tombol "Collaborate" sudah hilang.
+   - Tidak ada header ganda.
+   - Tampilan My Files tetap normal.
+11. Simpan semua perubahan.
+12. Commit dengan pesan:
+    Fix duplicate template header on My Files
+13. Push ke branch saat ini.
+
+Jangan berhenti setelah menemukan penyebabnya. Lanjutkan sampai masalah benar-benar selesai, lalu laporkan:
+- Penyebab utama (root cause).
+- File yang diubah.
+- Perubahan yang dilakukan.
+- Hasil pengujian setelah diperbaiki.
+
+
+```
+
+#
+```
 The TikTok provider is still incorrect.
 
 Current behavior:
