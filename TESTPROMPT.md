@@ -10,6 +10,39 @@
 
 #
 ```
+
+Masalah belum selesai.
+
+Saya sudah melakukan grep di VPS dan "Shared with me" masih muncul di hasil build.
+
+Jangan hanya mengubah isi komponen.
+
+Tugas:
+
+1. Temukan semua import dan render dari:
+   - components/phase6/shared-with-me.tsx
+   - components/phase6/collaboration-center.tsx
+
+2. Cari siapa yang masih merender komponen tersebut (misalnya AdvancedFileManager, layout, page, provider, atau wrapper).
+
+3. Hapus render kedua komponen tersebut dari root cause. Jangan disembunyikan dengan CSS.
+
+4. Setelah selesai jalankan:
+   npm run build
+
+5. Pastikan perintah berikut tidak lagi menemukan "Shared with me" pada source project:
+   grep -R "Shared with me" app components src
+
+6. Commit dan push.
+
+7. Jelaskan file mana yang masih merender komponen lama dan bagaimana perbaikannya.
+
+Jangan berhenti sampai halaman My Files hanya memiliki satu header Telegram Drive.
+
+```
+
+#
+```
 Kamu menghasilkan file TypeScript yang tidak valid.
 
 Build gagal karena kamu memasukkan teks penjelasan ke dalam source code.
