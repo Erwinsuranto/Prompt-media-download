@@ -6,6 +6,36 @@
 
 #
 ```
+Audit dan perbaiki bug pada Telegram Media Downloader.
+
+Masalah:
+- Saat pengguna mengirim link TikTok, bot hanya menampilkan tombol "MP3".
+- Tombol "Video / MP4" sama sekali tidak muncul.
+- Akibatnya pengguna tidak bisa memilih download video.
+
+Tugas:
+1. Audit seluruh alur setelah link TikTok diterima.
+2. Periksa fungsi yang membuat inline keyboard.
+3. Cari penyebab kenapa tombol Video/MP4 tidak dibuat atau tidak ditampilkan.
+4. Pastikan jika media memiliki video maka tombol berikut selalu muncul:
+   - 🎥 Video (MP4)
+   - 🎵 Audio (MP3)
+5. Jangan sembunyikan tombol Video hanya karena thumbnail atau metadata tertentu gagal dibaca.
+6. Audit callback_data tombol Video apakah benar terdaftar dan diproses.
+7. Periksa parser TikTok, YouTube, Instagram, Facebook, X, dan platform lain agar semuanya menampilkan pilihan Video jika tersedia.
+8. Setelah diperbaiki, lakukan pengujian dan pastikan:
+   - Link TikTok → muncul tombol Video dan MP3.
+   - Tombol Video dapat ditekan dan memulai download.
+   - Tombol MP3 tetap berfungsi.
+
+Jangan hanya menjelaskan penyebabnya. Langsung perbaiki source code, tampilkan file yang diubah, dan jelaskan mengapa tombol Video tidak muncul.
+
+
+```
+
+
+#
+```
 
 Tolong audit dan perbaiki bug pada project Telegram Media Downloader.
 
