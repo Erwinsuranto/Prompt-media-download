@@ -6,6 +6,76 @@
 
 
 
+
+
+#
+```
+Setelah commit terbaru berhasil di-pull ke VPS (commit 755333a), proses build gagal.
+
+Error:
+
+Error: Debug Failure. False expression.
+at parseVariableDeclarationList
+
+Ini bukan error TypeScript biasa, tetapi parser TypeScript gagal membaca syntax.
+
+Saya ingin kamu melakukan audit penuh terhadap commit terakhir.
+
+Tugas:
+
+1. Temukan file pertama yang menyebabkan parser crash.
+2. Audit semua file yang berubah pada commit terakhir.
+3. Cari:
+   - variable declaration yang tidak valid
+   - object literal rusak
+   - generic TypeScript salah
+   - arrow function tidak lengkap
+   - merge conflict marker (<<<<, ====, >>>>)
+   - karakter ilegal
+   - syntax TypeScript yang tidak didukung
+4. Temukan file dan nomor baris yang pasti menyebabkan parser gagal.
+5. Perbaiki semua syntax error.
+6. Jalankan kembali:
+   npm run build
+   npm test
+7. Jangan berhenti sampai build benar-benar berhasil tanpa error.
+
+====================================================
+
+PENTING
+
+JANGAN kirim diff.
+JANGAN kirim patch.
+JANGAN kirim unified diff.
+JANGAN kirim git apply.
+JANGAN kirim potongan kode.
+
+Saya bekerja dari VPS dan HP.
+
+Saya ingin langsung mengganti file.
+
+====================================================
+
+Untuk SETIAP file yang diperbaiki atau diubah, kirim FULL FILE.
+
+Format WAJIB:
+
+====================================================
+FILE 1
+
+Path:
+src/...
+
+Alasan perubahan:
+
+...
+
+```ts
+ISI LENGKAP FILE DARI BARIS PERTAMA SAMPAI BARIS TERAKHIR
+
+
+```
+
 #
 ```
 Jangan membuat patch di workspace internal (/mnt/workspace) dan jangan memberikan perintah git pull atau --allow-unrelated-histories.
