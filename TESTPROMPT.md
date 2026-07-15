@@ -2,6 +2,415 @@
 
 
 
+
+#
+```
+# TASK: Refactor Total Media Selection Pipeline
+
+Jangan membuat patch kecil.
+
+Lakukan audit dan refactor penuh terhadap pipeline Telegram Media Downloader mulai dari:
+
+Link
+↓
+Extractor
+↓
+Metadata
+↓
+FormatResolver
+↓
+MediaTypeKeyboard
+↓
+ResolutionKeyboard
+↓
+Callback Handler
+↓
+Download Queue
+↓
+Telegram Upload
+
+===========================================================
+MASALAH SAAT INI
+===========================================================
+
+Untuk link TikTok bot hanya menampilkan:
+
+🎵 Audio
+❌ Cancel
+
+Padahal media tersebut adalah VIDEO.
+
+Yang saya inginkan adalah:
+
+Semua media yang memiliki video harus selalu memiliki tombol:
+
+🎥 MP4
+🎵 MP3
+❌ Cancel
+
+Bukan hanya Audio.
+
+===========================================================
+TARGET UI
+===========================================================
+
+Semua platform memakai alur yang sama.
+
+Contoh:
+
+User kirim link
+
+↓
+
+Bot membaca metadata
+
+↓
+
+Bot mengirim preview
+
+↓
+
+Bot menampilkan
+
+🎥 MP4
+🎵 MP3
+❌ Cancel
+
+===========================================================
+ALUR MP4
+===========================================================
+
+Saat user menekan MP4
+
+IF
+
+platform memiliki banyak resolusi
+
+contoh:
+
+YouTube
+
+maka tampilkan
+
+2160p
+1440p
+1080p
+720p
+480p
+360p
+
+Cancel
+
+baru download.
+
+IF
+
+platform hanya memiliki satu kualitas
+
+contoh:
+
+TikTok
+Instagram
+Facebook
+X
+
+langsung download kualitas terbaik.
+
+===========================================================
+ALUR MP3
+===========================================================
+
+Saat user memilih MP3
+
+langsung download audio terbaik.
+
+===========================================================
+JANGAN PERNAH
+===========================================================
+
+Jangan menyembunyikan tombol MP4 hanya karena:
+
+- thumbnail tidak ada
+
+- metadata kurang lengkap
+
+- hanya ada satu kualitas
+
+- tidak ada daftar resolusi
+
+- codec tertentu
+
+Kalau ada video
+
+MP4 WAJIB muncul.
+
+===========================================================
+PIPELINE BARU
+===========================================================
+
+Buat model data baru.
+
+interface MediaInfo {
+
+platform
+
+hasVideo
+
+hasAudio
+
+videoFormats
+
+audioFormats
+
+bestVideo
+
+bestAudio
+
+supportsResolutionSelection
+
+}
+
+Semua extractor harus mengembalikan struktur ini.
+
+===========================================================
+FORMAT RESOLVER
+===========================================================
+
+Audit
+
+src/downloader/FormatResolver.ts
+
+Pastikan
+
+resolve()
+
+menghasilkan
+
+hasVideo=true
+
+jika videoFormats.length > 0
+
+hasAudio=true
+
+jika audioFormats.length > 0
+
+supportsResolutionSelection=true
+
+hanya jika
+
+videoFormats.length > 1
+
+===========================================================
+KEYBOARD
+===========================================================
+
+Audit
+
+src/bot/keyboards.ts
+
+Hapus logika lama.
+
+Buat fungsi baru:
+
+buildMediaTypeKeyboard()
+
+Hasilnya:
+
+Jika hasVideo
+
+tambahkan
+
+🎥 MP4
+
+Jika hasAudio
+
+tambahkan
+
+🎵 MP3
+
+Selalu
+
+❌ Cancel
+
+Jangan gunakan kondisi lain.
+
+===========================================================
+RESOLUTION KEYBOARD
+===========================================================
+
+Tambahkan
+
+buildResolutionKeyboard()
+
+Hanya dipakai
+
+jika
+
+supportsResolutionSelection=true
+
+===========================================================
+CALLBACK
+===========================================================
+
+Audit callback
+
+media:video
+
+media:audio
+
+resolution:*
+
+cancel
+
+Pastikan callback state tetap tersimpan.
+
+===========================================================
+PLATFORM
+===========================================================
+
+Audit seluruh extractor:
+
+TikTok
+
+YouTube
+
+Instagram
+
+Facebook
+
+Twitter/X
+
+Pinterest
+
+Threads
+
+===========================================================
+LOGGING
+===========================================================
+
+Tambahkan log:
+
+Platform
+
+hasVideo
+
+hasAudio
+
+videoFormats.length
+
+audioFormats.length
+
+supportsResolutionSelection
+
+Keyboard generated
+
+Selected callback
+
+Selected resolution
+
+Selected format
+
+Download started
+
+Upload started
+
+Upload finished
+
+===========================================================
+UNIT TEST
+===========================================================
+
+Tambahkan test:
+
+TikTok
+
+harus menghasilkan
+
+hasVideo=true
+
+hasAudio=true
+
+MP4 muncul
+
+MP3 muncul
+
+YouTube
+
+MP4 muncul
+
+MP3 muncul
+
+Resolution muncul
+
+Instagram
+
+MP4 muncul
+
+Facebook
+
+MP4 muncul
+
+X
+
+MP4 muncul
+
+===========================================================
+FILE YANG HARUS DIAUDIT
+===========================================================
+
+src/downloader/FormatResolver.ts
+
+src/downloader/
+
+src/extractors/
+
+src/bot/keyboards.ts
+
+src/bot/callbacks.ts
+
+src/bot/createBotApplication.ts
+
+src/download/
+
+src/types/
+
+===========================================================
+OUTPUT
+===========================================================
+
+Jangan hanya menjelaskan.
+
+Perbaiki source code.
+
+Tampilkan seluruh file yang diubah.
+
+Jika perlu buat file baru.
+
+Jalankan:
+
+npm run build
+
+npm test
+
+Pastikan seluruh test lulus.
+
+Lalu lakukan pengujian nyata menggunakan:
+
+1 link TikTok
+
+1 link YouTube
+
+1 link Instagram
+
+1 link Facebook
+
+dan tampilkan hasil keyboard yang muncul.
+
+Jangan selesai sebelum tombol MP4 benar-benar muncul untuk semua media video.
+
+
+```
+
 #
 ```
 
