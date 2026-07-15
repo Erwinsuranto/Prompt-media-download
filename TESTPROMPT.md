@@ -3,6 +3,38 @@
 
 
 
+
+
+#
+```
+Audit and fix the entire Telegram Drive project without asking for confirmation. Work directly in the repository and apply all necessary changes.
+
+Current issues:
+1. The /my-files page renders two headers. The old template header with "Shared with me" and "Collaborate" is still visible above the Telegram Drive header. Remove the old template completely so only one Telegram Drive header remains.
+2. Search all layouts, nested layouts, templates, providers, and components that may render duplicate headers or navigation. Fix the root cause instead of hiding it with CSS.
+3. Keep only one responsive header and one navigation system for both desktop and mobile.
+4. Preserve all existing Telegram Drive features and styling. Do not remove any functional components except the duplicated template UI.
+5. Ensure the Telegram bot starts correctly. The project currently expects CHANNEL_ID while .env.example uses TELEGRAM_CHANNEL_ID. Make the bot accept both variables:
+   - CHANNEL_ID
+   - TELEGRAM_CHANNEL_ID
+   Use whichever is available without breaking backward compatibility.
+6. Verify that website startup, bot startup, MongoDB connection, upload, My Files, folder creation, search, download, and channel storage all work after the fix.
+7. Remove dead code, unused imports, duplicate layouts, and obsolete template components if they are no longer referenced.
+8. Update README.md with a brief changelog describing every fix that was applied.
+9. Build the project, fix any TypeScript/ESLint/build errors, and do not stop until the project builds successfully with:
+   - npm run build
+   - npm start
+   - npm run bot
+
+When finished, provide:
+- Files changed.
+- Root cause of the duplicate header.
+- Root cause of the CHANNEL_ID issue.
+- Summary of all fixes performed.
+
+
+```
+
 # Minta Cline fokus ke callback, bukan yt-dlp
 ```
 
