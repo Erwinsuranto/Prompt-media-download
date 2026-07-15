@@ -5,6 +5,46 @@
 
 
 
+
+#
+```
+Jangan membuat patch di workspace internal (/mnt/workspace) dan jangan memberikan perintah git pull atau --allow-unrelated-histories.
+
+Masalahnya bukan di VPS. Repository GitHub saya masih berada pada commit c1eb752, sedangkan perubahan yang kamu buat hanya ada di workspace internal sehingga VPS selalu menampilkan:
+
+- git pull → Already up to date
+- git push → Everything up-to-date
+
+Saya TIDAK bisa mengakses /mnt/workspace, jadi patch yang kamu buat di sana tidak berguna.
+
+Yang saya inginkan:
+
+1. Jangan simpan patch di workspace internal.
+2. Jangan membuat commit lokal yang tidak bisa di-push.
+3. Tampilkan LANGSUNG seluruh perubahan di chat.
+4. Untuk setiap file yang diubah, tampilkan:
+   - path file
+   - isi lengkap file baru, atau unified diff (git diff) lengkap yang bisa saya salin.
+5. Jika file baru dibuat, tampilkan isi lengkap file tersebut.
+6. Jika file dihapus, jelaskan alasannya.
+7. Jangan memotong output. Jika terlalu panjang, kirim dalam beberapa bagian sampai selesai.
+8. Jangan menggunakan path internal seperti /mnt/workspace atau /tmp.
+9. Jangan menyuruh saya menjalankan git pull lagi karena repository GitHub belum berubah.
+10. Fokus pada perubahan source code yang memperbaiki bug MP4/MP3 dan tampilkan seluruh perubahan yang benar-benar diperlukan agar saya bisa menerapkannya langsung ke repository saya.
+
+Jika kamu memang memiliki akses GitHub dan bisa push, tampilkan:
+- git remote -v
+- git branch
+- git status
+- git log --oneline -5
+- hash commit HEAD
+- hasil git push
+
+Jika tidak bisa push, jangan membuat patch internal. Tampilkan seluruh perubahan source code langsung di chat sampai selesai.
+
+
+```
+
 #
 ```
 Kamu menampilkan commit 0905341, tetapi repository GitHub saya hanya memiliki commit c1eb752.
