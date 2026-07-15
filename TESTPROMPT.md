@@ -1,6 +1,38 @@
 
 
 
+
+
+#
+```
+
+
+The current debug logs are still incomplete.
+
+I only have:
+
+FormatResolver.resolve()
+Mapped MediaFormat[]
+metadata.formats
+Keyboard buttons
+
+This is too late because the video formats are already gone.
+
+I need debug logs BEFORE FormatResolver.
+
+Please modify the code to log:
+
+1. The COMPLETE raw JSON returned by yt-dlp.
+2. The raw formats array immediately after parsing yt-dlp.
+3. The raw formats passed into MetadataService.
+4. The raw formats passed into FormatResolver.
+
+Do not truncate the formats array.
+
+Then rebuild, run the bot, test the same TikTok URL, and identify exactly where video formats disappear.
+
+Do not guess. Fix the root cause only after locating the exact step.
+```
 #
 ```
 The Telegram inline keyboard has two issues.
