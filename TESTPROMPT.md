@@ -7,6 +7,66 @@
 
 #
 ```
+The TikTok provider is still incorrect.
+
+Current behavior:
+- Telegram callback works.
+- The MP3 button works.
+- The bot attempts to upload.
+- But for every TikTok URL, only one format is detected:
+  total=1
+  video=0
+  audio=1
+
+Expected behavior:
+The bot must detect all available TikTok video formats and show them in the Telegram keyboard, for example:
+- MP4 1080p
+- MP4 720p
+- MP4 480p
+- MP3
+
+Do NOT add more debug logs.
+
+Find the real root cause and fix it.
+
+Requirements:
+1. Trace the complete pipeline:
+   YtDlpClient
+   → MetadataService
+   → FormatResolver
+   → MediaFormat mapping
+   → Keyboard generation
+
+2. Verify that yt-dlp is executed correctly for TikTok.
+   If the command or arguments cause yt-dlp to return only audio, fix them.
+
+3. Inspect the raw JSON returned by yt-dlp.
+   If the JSON already contains video formats but they disappear later, fix the code where they are filtered or mapped.
+
+4. If MetadataService removes video formats, fix it.
+
+5. If FormatResolver incorrectly classifies TikTok formats as audio-only, fix it.
+
+6. If TikTok requires a different extraction strategy than YouTube, implement a dedicated TikTok parser while keeping other providers unchanged.
+
+7. Preserve merge support for separate video/audio streams.
+
+8. Do not hardcode resolutions.
+   Generate the keyboard dynamically from the formats returned by yt-dlp.
+
+9. After the fix, verify that a normal TikTok URL displays video buttons before the MP3 option.
+
+10. Run all tests, build the project, and ensure nothing else breaks.
+
+The objective is NOT to make MP3 work.
+The objective is to restore full TikTok video format detection so users can download MP4 videos as well as MP3.
+
+
+```
+
+
+#
+```
 
 You are working directly inside the Telegram Drive repository. Do not stop at analysis. Modify the code until the problem is completely fixed.
 
