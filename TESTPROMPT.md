@@ -5,7 +5,75 @@
 
 
 
+```
+Refactor tampilan akhir setelah download selesai.
 
+Saat ini bot masih mengirim pesan tambahan (emoji/placeholder seperti 🎬, 📹, atau pesan status) sebelum Inline Keyboard.
+
+Itu harus dihapus.
+
+Flow yang benar:
+
+1. Setelah download selesai, bot langsung mengirim file video.
+
+2. Inline Keyboard HARUS menempel pada pesan file video tersebut (attach ke message video), bukan mengirim pesan baru.
+
+3. Setelah file berhasil dikirim, jangan kirim pesan apa pun lagi.
+
+Jangan ada:
+- 🎬
+- 📹
+- ✅ Download selesai
+- 📦 File berhasil dikirim
+- atau pesan status lainnya.
+
+Yang terlihat di chat hanya:
+
+(Video/File Telegram)
+
+☁️ Upload ke Telegram Drive
+
+🔄 Download Lagi
+
+❌ Tutup
+
+4. Pastikan Inline Keyboard menggunakan editMessageReplyMarkup atau reply_markup pada pesan file, bukan membuat pesan teks baru.
+
+5. Jangan mengubah downloader, Telegram Drive, callback, session, queue, retry, cache, atau fungsi lainnya. Hanya rapikan tampilan akhir agar setelah file dikirim hanya ada file beserta tombol aksinya tanpa pesan tambahan.
+
+```
+
+```
+Perbaiki Reply Keyboard Telegram agar mengikuti standar Telegram.
+
+Masalah saat ini:
+- Reply Keyboard utama masih tetap tampil ketika user sedang berada di flow download.
+- Tidak ada tombol untuk menyembunyikan (minimize) keyboard.
+- Layar menjadi penuh oleh dua keyboard sekaligus.
+
+Yang harus dilakukan:
+
+1. Keyboard utama hanya tampil di Menu Utama (/start).
+
+2. Saat user masuk ke flow Download Video, otomatis sembunyikan Reply Keyboard utama menggunakan ReplyKeyboardRemove.
+
+3. Selama flow download, hanya tampilkan Inline Keyboard (pilih resolusi, Upload ke Telegram Drive, Download Lagi, Tutup). Jangan tampilkan Reply Keyboard utama.
+
+4. Setelah user menekan Tutup atau proses selesai sepenuhnya dan kembali ke Menu Utama, baru tampilkan kembali Reply Keyboard utama.
+
+5. Tambahkan tombol untuk menyembunyikan keyboard sesuai standar Telegram.
+Gunakan tombol:
+⌨️ Sembunyikan Keyboard
+
+Saat ditekan, kirim ReplyKeyboardRemove sehingga keyboard hilang dan user hanya melihat kolom chat.
+
+6. Jika user mengetik /start atau menekan Menu Utama, Reply Keyboard utama muncul kembali.
+
+7. Jangan mengubah callback, downloader, Telegram Drive, queue, cache, retry, session, maupun fungsi bot lainnya. Hanya perbaiki perilaku Reply Keyboard agar sesuai standar Telegram.
+
+Pastikan build berhasil tanpa error TypeScript.
+
+```
 ```
 
 Refactor menu bot Telegram.
