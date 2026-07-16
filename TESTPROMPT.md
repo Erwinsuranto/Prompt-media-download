@@ -5,6 +5,135 @@
 
 
 
+
+```
+Refactor hanya UX progress download Telegram Bot. Jangan mengubah downloader engine, yt-dlp, Telegram Drive, queue, retry, cache, duplicate detection, upload flow, session, callback flow, maupun logika download yang sudah berjalan.
+
+Tujuan utama: setelah user memilih resolusi (1080p, 720p, dll), bot tidak boleh terlihat diam.
+
+Implementasikan fallback progress message yang stabil:
+
+1. Kurang dari 1 detik setelah user memilih resolusi, bot WAJIB langsung mengirim SATU pesan progress.
+
+Contoh awal:
+
+⏳ Memulai download...
+
+□□□□□□□□□□ 0%
+
+Sedang menyiapkan downloader...
+
+2. Gunakan hanya SATU pesan progress.
+
+Jika preview video tidak bisa diedit oleh Telegram, otomatis buat SATU pesan progress baru, lalu edit pesan itu terus selama proses berjalan.
+
+Jangan membuat banyak pesan baru.
+
+3. Progress harus diperbarui selama proses.
+
+Contoh:
+
+⏳ Download berjalan...
+
+██░░░░░░░░ 20%
+🔍 Mengambil metadata...
+
+↓
+
+⏳ Download berjalan...
+
+█████░░░░░ 50%
+⬇️ Mengunduh video...
+
+↓
+
+⏳ Download berjalan...
+
+████████░░ 80%
+📦 Menyiapkan file...
+
+↓
+
+⏳ Download berjalan...
+
+██████████ 100%
+📤 Mengirim ke Telegram...
+
+Tambahkan animasi sederhana yang berubah setiap beberapa detik, misalnya:
+
+⏳
+⌛
+⏳
+⌛
+
+atau
+
+.
+..
+...
+....
+
+agar user tahu bot masih bekerja.
+
+4. Jika proses lebih dari 10 detik, edit pesan progress menjadi:
+
+⏳ Server sedang memproses video.
+
+Video besar dapat memerlukan waktu 30–60 detik.
+
+Mohon jangan menekan tombol lagi.
+
+5. Selama download berjalan, aktifkan anti double click.
+
+Jika user menekan resolusi lagi:
+
+Jangan membuat download kedua.
+
+Balas:
+
+⏳ Download masih berjalan.
+Silakan tunggu hingga selesai.
+
+6. Setelah download selesai:
+
+- Hapus pesan progress.
+- Kirim file video.
+- Setelah file berhasil dikirim, tampilkan keyboard:
+
+☁️ Upload ke Telegram Drive
+🔄 Download Lagi
+❌ Tutup
+
+Sehingga chat hanya berisi preview dan hasil download tanpa banyak pesan status.
+
+7. Jika download gagal:
+
+Jangan kirim pesan error baru.
+
+Edit pesan progress menjadi:
+
+❌ Download gagal.
+
+Alasan:
+<error>
+
+Keyboard:
+
+🔄 Coba Lagi
+❌ Tutup
+
+8. Tambahkan logging:
+
+[Progress] created
+[Progress] updated
+[Progress] edited
+[Progress] removed
+
+agar mudah di-debug.
+
+Pastikan build berhasil, tidak ada error TypeScript, seluruh test tetap lolos, dan semua fitur lama tetap berfungsi tanpa regresi.
+
+```
 ```
 # Prompt: Download Progress & Processing UI
 
