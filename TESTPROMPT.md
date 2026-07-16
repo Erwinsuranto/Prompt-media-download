@@ -6,6 +6,40 @@
 
 
 ```
+Lanjutkan implementasi tahap berikutnya.
+
+Targetnya bukan lagi memperbaiki bug, tetapi meningkatkan tingkat keberhasilan download YouTube pada video yang memunculkan "Sign in to confirm you're not a bot".
+
+Tambahkan Ultimate Fallback Layer.
+
+Tugas:
+
+1. Implementasikan multi extractor strategy.
+   Jika extractor utama gagal, coba extractor atau client lain yang masih didukung yt-dlp.
+
+2. Tambahkan adaptive client selection.
+   Simpan statistik client mana yang paling sering berhasil dan prioritaskan client tersebut untuk request berikutnya.
+
+3. Tambahkan IP reputation detection.
+   Jika error mengindikasikan IP datacenter dibatasi YouTube, beri log khusus agar mudah dibedakan dari error kode.
+
+4. Tambahkan proxy interface.
+   Jangan aktifkan proxy secara default, tetapi siapkan arsitektur agar nanti mudah menambahkan HTTP, SOCKS5, atau Residential Proxy tanpa mengubah engine utama.
+
+5. Tambahkan konfigurasi fallback melalui environment variable sehingga urutan client, retry, cookies, dan proxy dapat diubah tanpa mengubah source code.
+
+6. Pastikan semua perubahan tetap kompatibel dengan fitur Telegram Drive, cache, duplicate detection, progress message, dan upload.
+
+7. Setelah selesai jalankan:
+   npm run build
+   lalu lakukan pengujian ulang dan laporkan:
+   - file yang diubah,
+   - hasil build,
+   - hasil pengujian,
+   - apakah masih ada video yang gagal karena pembatasan YouTube.
+
+```
+```
 
 Audit dan refactor seluruh engine download YouTube pada project Telegram Media Downloader agar setara dengan downloader profesional.
 
