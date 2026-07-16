@@ -5,6 +5,400 @@
 
 
 ```
+# Prompt: Refactor UI/UX Bot Downloader (Main Menu + Clean Download Flow)
+
+Project: telegram-media-downloader
+
+Lakukan refactor pada UI/UX bot Telegram agar tampil lebih profesional, rapi, dan mudah digunakan.
+
+## Aturan
+
+- Jangan menghapus fitur yang sudah ada.
+- Jangan mengubah downloader engine.
+- Jangan mengubah provider.
+- Jangan mengubah queue.
+- Jangan mengubah cache.
+- Jangan mengubah duplicate detection.
+- Jangan mengubah upload Telegram Drive.
+- Jangan mengubah logging.
+- Fokus hanya pada alur interaksi (UI/UX) bot.
+
+---
+
+# 1. Main Menu (Reply Keyboard)
+
+Bot menggunakan Reply Keyboard yang selalu muncul di bawah chat (bukan hanya Inline Keyboard dan bukan hanya command /start).
+
+Keyboard utama:
+
+⬇️ Download Video
+
+📂 Telegram Drive
+
+📖 Petunjuk
+
+❓ Bantuan / FAQ
+
+📊 Status Bot
+
+⚙️ Pengaturan
+
+Keyboard ini selalu tampil setelah bot aktif.
+
+---
+
+# 2. /start
+
+Saat user mengetik /start atau pertama kali membuka bot:
+
+Bot menampilkan ucapan singkat.
+
+Contoh:
+
+👋 Selamat datang di Media Downloader.
+
+Bot ini dapat mendownload video dari YouTube, TikTok, Facebook, Instagram, X, dan platform lainnya.
+
+Silakan pilih menu di bawah.
+
+Setelah itu tampilkan Reply Keyboard utama.
+
+Jangan langsung meminta link.
+
+---
+
+# 3. Menu Download Video
+
+Saat user menekan:
+
+⬇️ Download Video
+
+Bot membalas:
+
+Silakan kirim link video yang ingin didownload.
+
+State download dimulai.
+
+---
+
+# 4. User Mengirim URL
+
+Gunakan seluruh downloader yang sudah ada.
+
+Jangan mengubah provider.
+
+Jangan mengubah proses download.
+
+Deteksi provider seperti sekarang.
+
+---
+
+# 5. Preview Media
+
+Bot mengirim SATU pesan preview berisi:
+
+Thumbnail
+
+Judul
+
+Platform
+
+Durasi
+
+Uploader
+
+View (jika ada)
+
+Kemudian tampilkan Inline Keyboard:
+
+🎬 MP4
+
+🎵 MP3
+
+❌ Batal
+
+---
+
+# 6. Jika memilih MP4
+
+JANGAN kirim pesan baru.
+
+Edit Inline Keyboard yang sama menjadi:
+
+1080p
+
+720p
+
+480p
+
+360p
+
+⬅️ Kembali
+
+❌ Batal
+
+---
+
+# 7. Jika memilih MP3
+
+Edit keyboard menjadi pilihan bitrate:
+
+320 kbps
+
+192 kbps
+
+128 kbps
+
+⬅️ Kembali
+
+❌ Batal
+
+---
+
+# 8. Saat user memilih kualitas
+
+Hapus keyboard kualitas.
+
+Edit pesan menjadi:
+
+⏳ Sedang mendownload...
+
+Tambahkan progress yang sudah ada jika tersedia.
+
+Jangan membuat banyak pesan progress.
+
+Gunakan editMessageText atau editMessageReplyMarkup.
+
+---
+
+# 9. Setelah Download Berhasil
+
+Progress selesai.
+
+Kirim file hasil download.
+
+Setelah file berhasil dikirim tampilkan SATU pesan:
+
+Pilih aksi berikutnya:
+
+Dengan Inline Keyboard:
+
+☁️ Upload ke Telegram Drive
+
+🔄 Download Lagi
+
+❌ Tutup
+
+Jangan tampilkan keyboard kualitas lagi.
+
+---
+
+# 10. Upload ke Telegram Drive
+
+Saat tombol ditekan:
+
+Upload menggunakan engine yang sudah ada.
+
+Jika file sudah ada:
+
+Jangan upload ulang.
+
+Gunakan duplicate detection.
+
+Tampilkan:
+
+✅ File sudah tersedia di Telegram Drive.
+
+Jika file baru:
+
+Tampilkan:
+
+✅ Upload berhasil.
+
+Nama File
+
+Ukuran
+
+File ID
+
+Link Telegram Drive (jika tersedia)
+
+Keyboard:
+
+📂 Buka File
+
+🔄 Download Lagi
+
+❌ Tutup
+
+---
+
+# 11. Download Lagi
+
+Saat ditekan:
+
+Reset session.
+
+Hapus state sebelumnya.
+
+Bot membalas:
+
+Silakan kirim link video yang ingin didownload.
+
+Tanpa perlu mengetik /start.
+
+---
+
+# 12. Tutup
+
+Saat ditekan:
+
+Hapus Inline Keyboard.
+
+Tidak menghapus file download.
+
+Tidak menghapus preview.
+
+Tidak menghapus histori chat.
+
+Yang tersisa hanya:
+
+Preview
+
+File download
+
+Informasi upload (jika ada)
+
+---
+
+# 13. Petunjuk
+
+Saat user menekan:
+
+📖 Petunjuk
+
+Bot menjelaskan:
+
+• Cara download video.
+
+• Cara memilih kualitas.
+
+• Cara upload ke Telegram Drive.
+
+• Platform yang didukung.
+
+• FAQ singkat.
+
+---
+
+# 14. Telegram Drive
+
+Saat user menekan:
+
+📂 Telegram Drive
+
+Tampilkan submenu:
+
+📁 File Saya
+
+🔍 Cari File
+
+📊 Statistik
+
+⬅️ Kembali
+
+Gunakan fitur yang sudah ada.
+
+---
+
+# 15. Bantuan
+
+Saat user menekan:
+
+❓ Bantuan / FAQ
+
+Tampilkan:
+
+Cara penggunaan
+
+Masalah umum
+
+Kontak Admin (jika tersedia)
+
+---
+
+# 16. Status Bot
+
+Tampilkan:
+
+Versi Bot
+
+Jumlah Provider Aktif
+
+Status Downloader
+
+Status Telegram Drive
+
+---
+
+# 17. Pengaturan
+
+Sediakan pengaturan sederhana:
+
+🌐 Bahasa
+
+🗑 Bersihkan Session
+
+⬅️ Kembali
+
+---
+
+# 18. Logging
+
+Tambahkan log berikut:
+
+START
+
+MAIN_MENU
+
+HELP_OPENED
+
+DOWNLOAD_STARTED
+
+PROVIDER_DETECTED
+
+FORMAT_SELECTED
+
+DOWNLOAD_PROGRESS
+
+DOWNLOAD_COMPLETED
+
+UPLOAD_STARTED
+
+UPLOAD_COMPLETED
+
+UPLOAD_DUPLICATE
+
+SESSION_RESET
+
+MENU_CLOSED
+
+---
+
+# 19. UI Rules
+
+- Hindari spam pesan.
+- Gunakan editMessageText dan editMessageReplyMarkup selama memungkinkan.
+- Keyboard kualitas harus hilang setelah dipilih.
+- Progress hanya satu pesan.
+- Setelah selesai, chat terlihat bersih.
+- Keyboard utama (Reply Keyboard) tetap selalu tersedia di bagian bawah chat.
+- Semua callback modular.
+- Semua state dibersihkan dengan benar.
+- Tidak boleh ada breaking change terhadap fitur downloader yang sudah ada.
+
+```
+```
 
 Project: telegram-media-downloader
 
