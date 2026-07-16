@@ -5,7 +5,184 @@
 
 
 
+```
 
+Audit dan refactor seluruh engine download YouTube pada project Telegram Media Downloader agar setara dengan downloader profesional.
+
+Jangan hanya memperbaiki satu bug. Audit seluruh alur download YouTube dari awal sampai akhir.
+
+Target:
+
+1. Jangan pernah mengandalkan hanya satu player YouTube.
+
+Buat fallback otomatis seperti berikut:
+
+Android Client
+↓
+iOS Client
+↓
+TV Client
+↓
+Web Creator Client
+↓
+Web Client
+↓
+Cookies
+↓
+PO Token (jika tersedia)
+
+Jika satu client gagal, otomatis lanjut ke client berikutnya tanpa menghentikan proses.
+
+2. Hapus semua hardcode format.
+
+Jangan selalu memakai:
+
+bestvideo+bestaudio
+
+Buat pemilih format dinamis.
+
+Urutan:
+
+- video+audio terbaik
+- best
+- progressive
+- muxed
+- adaptive
+- format lain yang tersedia
+
+Gunakan hasil --list-formats untuk menentukan pilihan terbaik secara otomatis.
+
+3. Tambahkan retry engine.
+
+Jika yt-dlp gagal:
+
+- coba client lain
+- coba format lain
+- coba cookies
+- coba tanpa cookies
+- coba extractor args berbeda
+
+Baru setelah semua gagal kirim pesan gagal.
+
+4. Tambahkan JavaScript Runtime Detection.
+
+Saat startup cek:
+
+node
+bun
+deno
+quickjs
+
+Gunakan runtime terbaik yang tersedia secara otomatis.
+
+Jangan hardcode.
+
+5. Tambahkan dukungan PO Token.
+
+Jika project sudah memiliki PO Token, gunakan otomatis.
+
+Jika tidak ada, lanjut tanpa error.
+
+6. Audit seluruh pemanggilan yt-dlp.
+
+Cari semua file yang menjalankan yt-dlp.
+
+Pastikan command selalu menggunakan opsi terbaik sesuai kondisi.
+
+7. Tambahkan logger lengkap.
+
+Log harus memperlihatkan:
+
+client yang digunakan
+format yang dipilih
+runtime JS
+cookies aktif/tidak
+PO Token aktif/tidak
+retry ke berapa
+alasan retry
+format fallback
+hasil akhir
+
+8. Refactor engine agar mudah ditambah provider baru.
+
+Pisahkan:
+
+Format Resolver
+
+Client Resolver
+
+Cookie Resolver
+
+Runtime Resolver
+
+PO Token Resolver
+
+Retry Strategy
+
+Download Strategy
+
+Jangan menaruh semua logika dalam satu file.
+
+9. Jangan menghapus fitur Telegram yang sudah ada.
+
+Tetap pertahankan:
+
+progress message
+
+cancel download
+
+Telegram Drive
+
+cache
+
+duplicate detection
+
+upload Telegram
+
+10. Setelah selesai jalankan:
+
+npm run build
+
+Perbaiki semua error sampai build berhasil.
+
+11. Setelah build berhasil lakukan pengujian menggunakan:
+
+YouTube Shorts
+
+YouTube Video biasa
+
+Video umur panjang
+
+Video 4K
+
+Video HDR
+
+Playlist
+
+TikTok
+
+Instagram
+
+Facebook
+
+X/Twitter
+
+Pastikan semuanya tetap berjalan.
+
+PENTING
+
+Jangan hanya memberi patch atau potongan kode.
+
+Kirim SELURUH ISI FILE LENGKAP untuk setiap file yang diubah, dari baris pertama sampai baris terakhir.
+
+Jangan gunakan placeholder "...", "// dst", atau "bagian lain tetap sama".
+
+Jika mengubah 8 file maka kirim lengkap 8 file.
+
+Jika mengubah 20 file maka kirim lengkap 20 file.
+
+Pastikan seluruh kode siap langsung saya salin dan replace tanpa meminta lanjutan atau bagian yang terpotong.
+```
 
 ```
 Audit penuh bug TikTok pada Telegram Media Downloader.
