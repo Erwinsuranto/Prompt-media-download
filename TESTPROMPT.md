@@ -7,6 +7,44 @@
 
 
 ```
+
+Refactor menu bot Telegram.
+
+AI sebelumnya salah menempatkan /start sebagai Reply Keyboard.
+
+Yang benar:
+
+1. Daftarkan semua command menggunakan Telegram setMyCommands sehingga saat user menekan tombol ☰ Menu di kiri kolom chat akan muncul:
+
+/start      🏠 Menu Utama
+/download   ⬇️ Download Video
+/drive      ☁️ Telegram Drive
+/help       📖 Petunjuk
+/faq        ❓ Bantuan / FAQ
+/status     📊 Status Bot
+/settings   ⚙️ Pengaturan
+
+2. Jangan tampilkan /start sebagai Reply Keyboard.
+
+3. Reply Keyboard tetap hanya berisi tombol UI:
+
+⬇️ Download Video
+
+☁️ Telegram Drive
+
+📖 Petunjuk
+
+❓ Bantuan / FAQ
+
+📊 Status Bot
+
+⚙️ Pengaturan
+
+4. Jangan mengubah callback, session, downloader, Telegram Drive, queue, cache, retry, maupun fungsi bot lainnya.
+
+Hanya perbaiki pemisahan antara Telegram Menu Commands (setMyCommands) dan Reply Keyboard agar sesuai standar Telegram.
+```
+```
 Rapikan UI setelah proses download selesai.
 
 1. Hapus pesan teks:
