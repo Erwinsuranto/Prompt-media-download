@@ -4,6 +4,211 @@
 
 
 
+
+```
+# Prompt: Download Progress & Processing UI
+
+Project: telegram-media-downloader
+
+Refactor UX saat proses download agar user selalu mengetahui bot masih bekerja.
+
+Jangan mengubah downloader engine.
+
+Jangan mengubah provider.
+
+Jangan mengubah queue.
+
+Jangan mengubah proses upload Telegram.
+
+Hanya ubah tampilan status proses.
+
+---
+
+## 1. Setelah user memilih kualitas
+
+Misalnya user memilih:
+
+1080p
+
+Bot langsung:
+
+- Disable Inline Keyboard.
+- Edit pesan preview.
+- Tampilkan status:
+
+⏳ Memulai download...
+
+Sedang mengambil informasi video...
+
+Mohon tunggu.
+
+Jangan diam tanpa respon.
+
+---
+
+## 2. Progress Bertahap
+
+Selama downloader berjalan, update pesan menggunakan editMessageText.
+
+Contoh:
+
+🟡 Menghubungi server...
+
+atau
+
+📋 Mengambil metadata...
+
+↓
+
+🎬 Memilih format terbaik...
+
+↓
+
+⬇️ Mulai download...
+
+↓
+
+██████░░░░ 60%
+
+1.8 MB / 3.4 MB
+
+↓
+
+██████████ 100%
+
+Menggabungkan video...
+
+↓
+
+📦 Menyiapkan file...
+
+↓
+
+📤 Mengirim ke Telegram...
+
+↓
+
+✅ Download selesai.
+
+---
+
+## 3. Jika downloader tidak memiliki progress
+
+Gunakan animasi status.
+
+Contoh berganti setiap 2 detik:
+
+⏳ Memproses.
+
+⏳ Memproses..
+
+⏳ Memproses...
+
+⏳ Memproses....
+
+Lalu ulangi.
+
+User harus selalu melihat bahwa bot masih aktif.
+
+---
+
+## 4. Tahapan Status
+
+Gunakan status berikut sesuai proses sebenarnya:
+
+🔍 Membaca link
+
+📋 Mengambil metadata
+
+🎬 Menentukan kualitas
+
+⬇️ Download video
+
+🎵 Download audio
+
+🔄 Menggabungkan video
+
+📦 Menyiapkan file
+
+📤 Mengirim ke Telegram
+
+☁️ Upload ke Drive (jika dipilih)
+
+✅ Selesai
+
+---
+
+## 5. Timeout
+
+Jika proses lebih dari 10 detik:
+
+Tambahkan:
+
+"Video sedang diproses.
+
+Jangan kirim link lagi.
+
+Bot akan mengirim file secara otomatis setelah selesai."
+
+---
+
+## 6. Error
+
+Jika gagal:
+
+❌ Download gagal.
+
+Alasan:
+
+...
+
+Keyboard:
+
+🔄 Coba Lagi
+
+❌ Tutup
+
+---
+
+## 7. Setelah file berhasil dikirim
+
+Hapus pesan progress.
+
+Yang tersisa hanya:
+
+- Preview
+- File video
+- Tombol:
+
+☁️ Upload ke Telegram Drive
+
+🔄 Download Lagi
+
+❌ Tutup
+
+Tidak boleh ada progress yang tertinggal.
+
+---
+
+## 8. Anti Double Download
+
+Selama proses berlangsung:
+
+- Tolak request download baru dari user yang sama.
+- Jika user mengirim link lain, balas:
+
+"⏳ Download sebelumnya masih berjalan.
+
+Silakan tunggu hingga selesai."
+
+Setelah proses selesai atau gagal, session dibuka kembali.
+
+---
+
+Pastikan semua update menggunakan editMessageText/editMessageReplyMarkup agar chat tetap bersih dan profesional.
+
+```
+
 ```
 # Prompt: Refactor UI/UX Bot Downloader (Main Menu + Clean Download Flow)
 
