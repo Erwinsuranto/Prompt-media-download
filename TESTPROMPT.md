@@ -4,6 +4,175 @@
 
 
 
+```
+
+Project: telegram-media-downloader
+
+Lakukan refactor alur bot Telegram agar lebih sederhana, cepat, dan profesional.
+
+JANGAN menghapus fitur yang sudah ada.
+JANGAN mengubah downloader engine.
+JANGAN mengubah queue, cache, duplicate detection, upload Telegram, logging, maupun provider.
+Hanya ubah alur interaksi bot.
+
+Target flow:
+
+/start
+
+Bot menampilkan pesan singkat dan Inline Keyboard:
+
+📖 Petunjuk
+⬇️ Download Video
+
+=================================
+
+1. Tombol 📖 Petunjuk
+
+Saat ditekan tampilkan:
+
+- Cara menggunakan bot.
+- Platform yang didukung.
+- Cara memilih kualitas.
+- Cara upload ke Telegram Drive.
+- Catatan bahwa YouTube kadang membutuhkan cookies yang valid.
+
+Tambahkan tombol:
+
+⬇️ Mulai Download
+
+=================================
+
+2. Tombol ⬇️ Download Video
+
+Bot meminta user mengirim URL.
+
+Contoh:
+
+"Silakan kirim link video yang ingin didownload."
+
+=================================
+
+3. Setelah user mengirim URL
+
+Gunakan seluruh alur downloader yang sudah ada.
+
+Deteksi provider.
+
+Ambil metadata.
+
+Tampilkan pilihan kualitas seperti sekarang.
+
+Tidak mengubah proses ini.
+
+=================================
+
+4. Setelah user memilih kualitas
+
+Bot download file.
+
+Setelah download selesai:
+
+✅ Kirim file langsung ke user.
+
+JANGAN langsung upload ke Telegram Drive.
+
+=================================
+
+5. Setelah file berhasil dikirim
+
+Tampilkan Inline Keyboard baru:
+
+☁️ Upload ke Telegram Drive
+🔄 Download Lagi
+❌ Tutup
+
+=================================
+
+6. Jika user memilih
+
+☁️ Upload ke Telegram Drive
+
+Baru lakukan proses upload yang sudah ada sekarang.
+
+Gunakan upload engine yang sudah ada.
+
+Setelah berhasil tampilkan:
+
+✅ Upload berhasil
+
+Nama File
+Ukuran
+File ID
+Link Telegram Drive (jika ada)
+
+=================================
+
+7. Duplicate Detection
+
+Jika hash file sudah ada di Telegram Drive:
+
+JANGAN upload ulang.
+
+Langsung gunakan file yang sudah ada.
+
+Tampilkan:
+
+"File sudah tersedia di Telegram Drive."
+
+Lalu tampilkan tombol:
+
+📂 Buka File
+🔄 Download Lagi
+
+=================================
+
+8. Download Lagi
+
+Menghapus state sebelumnya.
+
+Bot kembali meminta URL baru.
+
+=================================
+
+9. Tutup
+
+Menghapus keyboard.
+
+Tidak menghapus pesan video.
+
+=================================
+
+10. Logging
+
+Tambahkan log:
+
+START_MENU
+
+HELP_MENU
+
+DOWNLOAD_REQUEST
+
+DOWNLOAD_SUCCESS
+
+UPLOAD_REQUEST
+
+UPLOAD_SUCCESS
+
+UPLOAD_SKIPPED_DUPLICATE
+
+SESSION_RESET
+
+=================================
+
+Pastikan:
+
+- Tidak ada breaking change.
+- Semua callback tetap modular.
+- Semua state dibersihkan setelah selesai.
+- Gunakan SessionManager yang sudah ada.
+- Jangan menambah dependency baru.
+- Semua fitur lama tetap berjalan.
+```
 
 ```
 Lanjutkan implementasi tahap berikutnya.
