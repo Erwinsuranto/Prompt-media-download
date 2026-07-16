@@ -7,6 +7,38 @@
 
 
 ```
+Rapikan UI setelah proses download selesai.
+
+1. Hapus pesan teks:
+"Pilih aksi berikutnya:"
+
+Jangan tampilkan lagi karena tidak diperlukan.
+
+2. Keyboard hasil download diubah menjadi vertikal (1 tombol per baris), bukan horizontal.
+
+Susunan harus seperti ini:
+
+☁️ Upload ke Telegram Drive
+
+🔄 Download Lagi
+
+❌ Tutup
+
+Upload dan Download Lagi jangan berada dalam satu baris. Tutup berada di baris paling bawah agar tidak mudah terpencet.
+
+3. Jangan mengubah fungsi tombol. Hanya ubah layout keyboard menjadi lebih rapi dan mudah digunakan di layar HP.
+
+4. Pastikan setelah file berhasil dikirim, yang tersisa di chat hanya:
+- Preview video
+- File hasil download
+- Keyboard vertikal di bawah file
+
+Tidak ada pesan tambahan seperti "Pilih aksi berikutnya".
+
+5. Pastikan semua callback, session, Telegram Drive, downloader, retry, queue, cache, dan seluruh fitur lama tetap berfungsi tanpa perubahan. Build harus sukses tanpa error TypeScript.
+
+```
+```
 Refactor hanya UX progress download Telegram Bot. Jangan mengubah downloader engine, yt-dlp, Telegram Drive, queue, retry, cache, duplicate detection, upload flow, session, callback flow, maupun logika download yang sudah berjalan.
 
 Tujuan utama: setelah user memilih resolusi (1080p, 720p, dll), bot tidak boleh terlihat diam.
